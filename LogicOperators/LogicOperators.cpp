@@ -57,11 +57,28 @@ int main()
 	cin >> LineNumber;
 	if ((LineNumber >= 2 && LineNumber <= 5) || (LineNumber >= -1 && LineNumber <=1))
 	{
-		cout << "this number is from your line segments";
+		cout << "this number is from your line segments\n\n";
 	}
 	else
 	{
-		cout << "Your number is out of line segments ";
+		cout << "Your number is out of line segments \n\n";
+	}
+	cout << "Given 3 numbers. Determine if they are equal each other\n";
+	cout << "Enter three numbers \n";
+	int	number01;
+	cin >> number01;
+	int	number02;
+	cin >> number02;
+	int	number03;
+	cin >> number03;
+	if (number01 == number2 && number1 == number3)
+	{
+		cout << "The numbers are equal each other\n\n";
+	}
+		
+	else
+	{
+		cout << "Numbers aren't equal each other";
 	}
 
 }
