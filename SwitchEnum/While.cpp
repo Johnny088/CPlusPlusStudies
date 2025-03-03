@@ -1,8 +1,8 @@
 
 
-#include <iostream>
-using namespace std;
-int main()
+//#include <iostream>
+//using namespace std;
+//int main()
 {
 	cout << "task#1 show all numbers from 1 to 100\n";
 	int number = 1;
