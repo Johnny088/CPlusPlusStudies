@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Homework.cpp" />
     <ClCompile Include="Switch.cpp" />
     <ClCompile Include="While.cpp" />
   </ItemGroup>
