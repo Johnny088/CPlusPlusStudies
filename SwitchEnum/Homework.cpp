@@ -107,7 +107,77 @@ int main()
 		number1++;
 
 	} while (number1 <= number2);
-	
-
-
+	cout << endl << "given two numbers of range by user. Need to determine: 1 - all even numbers; 2 - all odd numbers; 3 - all numbers that are miltiples of 7\n";
+	cout << "Give me the number one\n";
+	cin >> number1;
+	cout << "Give me the number two\n";
+	cin >> number2;
+	int number3;
+	int number4;
+	int number5;
+	number3 = number1;
+	if (number1 > number2)
+	{
+		number1 = number2;
+		number2 = number3;
+		cout << "The number one is:\n" << number1 << "\nThe number two is:\n" << number2 << endl;
+	}
+	number4 = number1;
+	number5 = number1;
+	cout << "\nAll even numbers are:\n";
+	while (number1 <= number2)
+	{
+		if (number1 % 2 == 0)
+		{
+			cout << number1 << " ";
+		}
+		number1++;
+	}
+	cout << "\nAll odd numbers are:\n";
+	while (number4 <= number2)
+	{
+		if (number4 % 2 != 0)
+		{
+			cout << number4 << " ";
+		}
+		number4++;
+	}
+	cout << "\nAll numbers that are multiples of 7:\n";
+	while (number5 <= number2)
+	{
+		if (number5 % 7 == 0)
+		{
+			cout << number5 << " ";
+		}
+		number5++;
+	}
+	cout << endl << "Given range of two numbers by user. Determine sum of numbers in this range\n";
+	cout << "Give me the number one\n";
+	cin >> number1;
+	cout << "Give me the number two\n";
+	cin >> number2;
+	number3 = number1;
+	sum = 0;
+	if (number1 > number2)
+	{
+		number1 = number2;
+		number2 = number3;
+		cout << "\nThe number one is:\n" << number1 << "\nThe number two is:\n" << number2 << endl;
+	}
+	while (number1 <= number2)
+	{
+		sum += number1;
+		number1++;
+	}
+	cout << "\n The sum of numbers is: " << sum << endl;
+	cout << " User gives some numbers, need counting the sum of hte numbers until this user push zero:\n";
+	sum = 0;
+	number1;
+	while (number1 != 0)
+	{
+		cout << "Enter the number\n";
+		cin >> number1;
+		sum += number1;
+	}
+	cout << endl << "The sum of numbers equil: " << sum << endl;
 }
