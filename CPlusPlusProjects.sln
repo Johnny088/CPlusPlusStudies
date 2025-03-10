@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arrea", "Arrea\Arrea.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RandomMatrix", "ConsoleApplication1\ConsoleApplication1.vcxproj", "{786A58D0-48F2-4906-9E2C-5EBE133D3BC2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Function", "Function\Function.vcxproj", "{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -73,6 +75,14 @@ Global
 		{786A58D0-48F2-4906-9E2C-5EBE133D3BC2}.Release|x64.Build.0 = Release|x64
 		{786A58D0-48F2-4906-9E2C-5EBE133D3BC2}.Release|x86.ActiveCfg = Release|Win32
 		{786A58D0-48F2-4906-9E2C-5EBE133D3BC2}.Release|x86.Build.0 = Release|Win32
+		{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}.Debug|x64.ActiveCfg = Debug|x64
+		{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}.Debug|x64.Build.0 = Debug|x64
+		{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}.Debug|x86.ActiveCfg = Debug|Win32
+		{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}.Debug|x86.Build.0 = Debug|Win32
+		{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}.Release|x64.ActiveCfg = Release|x64
+		{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}.Release|x64.Build.0 = Release|x64
+		{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}.Release|x86.ActiveCfg = Release|Win32
+		{5292F6CB-820E-41C4-BCB1-A4EECF8E00A6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
