@@ -18,5 +18,8 @@
     <ClCompile Include="RandomMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HomeworkMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
