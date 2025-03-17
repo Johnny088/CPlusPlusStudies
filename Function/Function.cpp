@@ -35,7 +35,7 @@ void issimple(int a)
 			count += 1;
 		}
 	}
-	if (count > 1)
+	if (count >= 1)
 	{
 		cout << "The number is NOT simple\n";
 	}
@@ -85,6 +85,35 @@ void minmax(int a[], int size)
 	cout << endl << "the min of the array is: " << min << "\nThe max of the array is: " << max;
 
 }
+void PrintRevers(int a[],int size)
+{
+	for (int i = size-1; i >=0; i--)
+	{
+		cout << a[i] << " ";
+
+	}
+	cout << endl;
+}
+int mountsimple(int a[], int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 1; j <= ((a[i] / 2) + 1); j++)
+		{
+			if (a[i] % j == 0)
+			{
+				count += 1;
+			}
+		}
+		if (count <= 1)
+		{
+		count += 1;
+		
+		}
+		return  count;
+	}
+}
 void main()
 {
 	cout << "Task1. Need to show the rectangle, given high and width\n";
@@ -94,7 +123,7 @@ void main()
 	cin >> SizeA;
 	cout << "Enter the size b: ";
 	cin >> SizeB;
-	triangle(SizeA,SizeB);
+	triangle(SizeA, SizeB);
 	cout << endl << "Show fuctorial of number:\n Enter the number\n";
 	int number1;
 	cin >> number1;
@@ -111,7 +140,7 @@ void main()
 	cout << "task5\n\tShow the max of two numbers\n";
 	cout << "Enter the first number: ";
 	cin >> number1;
-	 int number2;
+	int number2;
 	cout << "Enter the second number: ";
 	cin >> number2;
 	cout << endl << max(number1, number2);
@@ -123,4 +152,8 @@ void main()
 	const int size = 10;
 	int arr1[size] = { 2,95,65,23,5,98,-45,65,99,59 };
 	minmax(arr1, size);
+	cout << "\ntask8\n\tGiven array. Need to show it in the reverse way\n";
+	PrintRevers(arr1, size);
+	cout << "\ntask9\n\tGiven array. Need to count simple numbers\n\t\t\t\t\t\t I have no idea how to solve it";
+	mountsimple(arr1, size);
 }
