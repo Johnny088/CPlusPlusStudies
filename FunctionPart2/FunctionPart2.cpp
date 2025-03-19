@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 template <typename T>
 T maxel(T a,T b)
@@ -82,14 +83,14 @@ T MaxOfArr(T arr[], int size)
 }
 
 template <typename T>
-T MaxOfArr(T arr[6][6], int size)
+T MaxOfArr(T arr[3][3], int size)
 {
-	T max = arr[0][0]
+	T max = arr[0][0];
 	for (int i = 0; i < size; i++)
 	{
-		for (T j = 0; j < size; j++)
+		for (int j = 0; j < size; j++)
 		{
-			cout << arr[i][j] << " ";
+			cout << setw(5) << arr[i][j] << " ";
 			if (max < arr[i][j])
 			{
 				max = arr[i][j];
@@ -97,7 +98,7 @@ T MaxOfArr(T arr[6][6], int size)
 		}
 		cout << endl;
 	}
-	return max
+	return max;
 }
 
 
@@ -132,12 +133,17 @@ int main()
 	int MaxOfArr3 = MaxOfArr(arr3, size);
 	cout << "Max of Array is: " << MaxOfArr3 << endl;
 
-	float arr4[size] = {6.26,85.65,98.95,62.65,54.65,15.62};
+	float arr4[size] = {6.26,85.65,98.91,62.65,54.65,15.62};
 	float MaxOfArr4 = MaxOfArr(arr4, size);
 	cout << "Max of Array is: " << MaxOfArr4 << endl;
-
-	int arr5[col][row] = {5,9,6,9,6,5,65,65,65};
+	const int newsize = 3;
+	int arr5[col][row] = {5,9,6,9,6,5,61,68,65};
+	int arrmax5 = MaxOfArr(arr5, newsize);
+	cout << "Max of Array is: " << arrmax5 << endl;
 	float arr6[col][row] = {58.65,91.59,62.32,93.65,67.45,51.23,45.65,95.25,75.48};
+	float arrmax6 = MaxOfArr(arr6, newsize);
+	cout << "Max of Array is: " << arrmax6 << endl;
+
 
 }
 
