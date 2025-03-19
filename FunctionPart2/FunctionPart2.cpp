@@ -1,13 +1,13 @@
-
-
 #include <iostream>
 using namespace std;
-int max(int a,int b)
+template <typename T>
+T maxel(T a,T b)
 {
 	return (a > b) ? a : b;
 
 }
-int max(int a, int b, int c)
+template <typename T>
+T maxel(T a, T b, T c)
 {
 	if (a > b && a > c)
 	{
@@ -27,12 +27,14 @@ int max(int a, int b, int c)
 
 
 }
-int min(int a, int b)
+template <typename T>
+T minel(T a, T b)
 {
 	return (a < b) ? a : b;
 
 }
-int min(int a, int b, int c)
+template <typename T>
+T minel(T a, T b, T c)
 {
 	if (a < b && a < c)
 	{
@@ -60,21 +62,59 @@ T average(T a[], int size)
 	}
 	return  sum / size;
 }
+template <typename T>
+T MaxOfArr(T arr[], int size)
+{
+	T max = arr[0];
+		for (int i = 0; i < size; i++)
+		{
+			
+			cout << arr[i] << " ";
+			if (max < arr[i])
+			{
+				max = arr[i];
+			}
+		}
+		cout << endl;
+		return max;
+		
+
+}
+
+template <typename T>
+T MaxOfArr(T arr[6][6], int size)
+{
+	T max = arr[0][0]
+	for (int i = 0; i < size; i++)
+	{
+		for (T j = 0; j < size; j++)
+		{
+			cout << arr[i][j] << " ";
+			if (max < arr[i][j])
+			{
+				max = arr[i][j];
+			}
+		}
+		cout << endl;
+	}
+	return max
+}
+
 
 int main()
 {
 	cout << "task1 Need to find min and max of numbers\n";
 	cout << "It's max of two numbers\n";
-	int a = max(11, 7);
+	int a = maxel(11, 7);
 	cout << a << endl;
 	cout << "It's max of three numbers\n";
-	int b = max(11, 25,15);
+	int b = maxel(11, 25, 15);
 	cout << b << endl;
 	cout << "It's min of two numbers\n";
-	int e = min(11, 7);
+	int e = minel(11, 7);
 	cout << e << endl;
 	cout << "It's min of three numbers\n";
-	int f = min(11, 25, 15);
+	int f = minel(11, 25, 15);
 	cout << f << endl;
 	cout << "task2 Need to find the average  \n";
 	const int size = 6;
@@ -84,5 +124,20 @@ int main()
 	cout << endl;
 	cout << "Average  is: " << average(arr2, size);
 	cout << endl;
+	cout << "task3 Need to find the max of arrays  \n";
+	const int col = 3;
+	const int row = 3;
+
+	int arr3[size] = { 6,85,98,62,54,15 };
+	int MaxOfArr3 = MaxOfArr(arr3, size);
+	cout << "Max of Array is: " << MaxOfArr3 << endl;
+
+	float arr4[size] = {6.26,85.65,98.95,62.65,54.65,15.62};
+	float MaxOfArr4 = MaxOfArr(arr4, size);
+	cout << "Max of Array is: " << MaxOfArr4 << endl;
+
+	int arr5[col][row] = {5,9,6,9,6,5,65,65,65};
+	float arr6[col][row] = {58.65,91.59,62.32,93.65,67.45,51.23,45.65,95.25,75.48};
+
 }
 

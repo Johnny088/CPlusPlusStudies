@@ -66,10 +66,8 @@ int IsPositive(int a)
 }
 void minmax(int a[], int size)
 {
-	int Min = 2147483647;
-	int Max = -2147483647;
-	int min = Min;
-	int max = Max;
+	int min = 2147483647;
+	int max = -2147483647;
 	for (int i = 0; i < size; i++)
 	{
 		cout << a[i] << " ";
