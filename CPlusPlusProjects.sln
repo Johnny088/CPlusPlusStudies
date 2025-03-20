@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestNew", "TestNew\TestNew.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointers", "Pointers\Pointers.vcxproj", "{ED3E9F11-FF02-4E61-906C-AF4A1A41860F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointersPartTwo", "PointersPartTwo\PointersPartTwo.vcxproj", "{FC364F8C-4505-42F3-8B31-FC942BF65082}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -123,6 +125,14 @@ Global
 		{ED3E9F11-FF02-4E61-906C-AF4A1A41860F}.Release|x64.Build.0 = Release|x64
 		{ED3E9F11-FF02-4E61-906C-AF4A1A41860F}.Release|x86.ActiveCfg = Release|Win32
 		{ED3E9F11-FF02-4E61-906C-AF4A1A41860F}.Release|x86.Build.0 = Release|Win32
+		{FC364F8C-4505-42F3-8B31-FC942BF65082}.Debug|x64.ActiveCfg = Debug|x64
+		{FC364F8C-4505-42F3-8B31-FC942BF65082}.Debug|x64.Build.0 = Debug|x64
+		{FC364F8C-4505-42F3-8B31-FC942BF65082}.Debug|x86.ActiveCfg = Debug|Win32
+		{FC364F8C-4505-42F3-8B31-FC942BF65082}.Debug|x86.Build.0 = Debug|Win32
+		{FC364F8C-4505-42F3-8B31-FC942BF65082}.Release|x64.ActiveCfg = Release|x64
+		{FC364F8C-4505-42F3-8B31-FC942BF65082}.Release|x64.Build.0 = Release|x64
+		{FC364F8C-4505-42F3-8B31-FC942BF65082}.Release|x86.ActiveCfg = Release|Win32
+		{FC364F8C-4505-42F3-8B31-FC942BF65082}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
