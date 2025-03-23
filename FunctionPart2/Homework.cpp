@@ -80,6 +80,40 @@ void AmountOfZero(T array[])
 	}
 	cout << "The zero numbers in the array are: " << count << " times." << endl;
 }
+
+template <typename T>
+void MaxOfDiagonale(T array[size][size])
+{
+	T max = array[0][0];
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			if (array[i] == array[j] && array[i][j]>max)
+			{
+				max = array[i][j];
+			}
+		}
+	}
+	cout << "The max of main diagonale is: " << max << endl;
+}
+
+template <typename T>
+void MinOfDiagonale(T array[size][size])
+{
+	T min = array[0][0];
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			if (array[i] == array[j] && array[i][j] < min)
+			{
+				min = array[i][j];
+			}
+		}
+	}
+	cout << "The min of main diagonale is: " << min << endl;
+}
 int main()
 {
 	srand(time(NULL));
@@ -97,9 +131,11 @@ int main()
 	AmountOfNegative(array2);
 	AmountOfPositive(array2);
 	AmountOfZero(array2);
-	cout << "Task2. Need to make some functions such as filling a square matrix out, showing the matrix on the screen, detetermination  min$max on main and side diagonales\n";
+	cout << "Task2. Need to make some functions such as filling a square matrix out, showing the matrix on the screen, detetermination  min$max of main diaginales\n";
 	int array3[size][size];
 	FillOut(array3);
 	PrintArray(array3);
-
+	MaxOfDiagonale(array3);
+	MinOfDiagonale(array3);
+	cout << "Sorry, but sort is too dificult for me at the moment, and today is dedline, and I'm not sure that I can do the task number 3.\n";
 }
