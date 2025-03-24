@@ -137,5 +137,5 @@ int main()
 	PrintArray(array3);
 	MaxOfDiagonale(array3);
 	MinOfDiagonale(array3);
-	cout << "Sorry, but sort is too difficult for me at the moment, and today is dedline, and I'm not sure that I can do the task number 3.\n";
+	cout << "Task3. Sorry, but sort is too difficult for me at the moment, and today is dedline, and I'm not sure that I can do the task number 3.\n";
 }
