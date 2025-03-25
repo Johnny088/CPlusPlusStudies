@@ -56,4 +56,8 @@ int main()
     cout << "The leters in line are " << CountLetter << " times\n";
     cout << "The numbers in line are " << CountNumbers << " times\n";
     cout << "The space in line are " << CountSpace << " times\n";
+    cout << "Task3. ";
+    char text[255] = "Lorem Ipsum is simply DUMMY text OF the printing AND typesetting industry. LOREM Ipsum has been THE industry's standard dummy";
+    cout << text << endl;
+    cout << "THe second way: \n";
 }

@@ -37,19 +37,19 @@ void calculator(int* a, int* b, char c)
     case '-':
     {
         int temp = *a - *b;
-        cout << *a << " + " << *b << " = " << temp << endl;
+        cout << *a << " - " << *b << " = " << temp << endl;
         break;
     }
     case '*':
     {
         int temp = *a * *b;
-        cout << *a << " + " << *b << " = " << temp << endl;
+        cout << *a << " * " << *b << " = " << temp << endl;
         break;
     }
     case '/':
     {
         int temp = *a / *b;
-        cout << *a << " + " << *b << " = " << temp << endl;
+        cout << *a << " / " << *b << " = " << temp << endl;
         break;
     }
 
