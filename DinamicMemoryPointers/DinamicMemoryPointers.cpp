@@ -109,6 +109,8 @@ int main()
     cout << "The second array is:\n";
     JustCopy(parr01, parr02, size01);
     ShowArray(parr02, size01);
+    /*cout << parr02[3] << endl;
+    cout << parr02 << endl;*/
     delete[] parr01;
     delete[] parr02;
 }
