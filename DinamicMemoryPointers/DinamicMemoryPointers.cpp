@@ -50,6 +50,14 @@ void CopyRevers(int* parray1, int* parray2, int size)
         j++;
     }
 }
+void JustCopy(int* parr1, int* parr2, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        *(parr2 + i) = *(parr1 + i);
+
+    }
+}
 int main()
 {
     srand(time(0));
@@ -89,4 +97,19 @@ int main()
     delete []parr3;
     delete []parr4;
     delete []parr5;
+    cout << "\t\t\tHomework\nTask1. Given 2 pointers, need to copy the first pointers to the second pointers.\n";
+    int size01;
+    cout << "Enter the size of the array: ";
+    cin >> size01;
+    int* parr01 = new int[size01];
+    int* parr02 = new int[size01];
+    FillOut(parr01, size01);
+    cout << "The first array is:\n";
+    ShowArray(parr01, size01);
+    cout << "The second array is:\n";
+    JustCopy(parr01, parr02, size01);
+    ShowArray(parr02, size01);
+    cout << "Task2. "
+    delete[] parr01;
+    delete[] parr02;
 }
