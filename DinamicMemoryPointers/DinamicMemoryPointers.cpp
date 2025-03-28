@@ -31,7 +31,24 @@ void StickArray(int* parr1, int size1, int* parr2,int size2, int* parr3)
         *(parr3 + size1 + i) = *(parr2 + i);
 
     }
-
+}
+void ShowRevers(int* parr, int size)
+{
+    for (int i = size-1; i >= 0; i--)
+    {
+        cout << *(parr + i) << " ";
+    }
+    cout << "\n";
+}
+void CopyRevers(int* parray1, int* parray2, int size)
+{
+    int j = 0;
+    for (int i = size - 1; i >= 0; i--)
+    {
+        
+        *(parray2 +j) = *(parray1 + i);
+        j++;
+    }
 }
 int main()
 {
@@ -55,10 +72,21 @@ int main()
     ShowArray(parr2, size2);
     StickArray(parr1, size1, parr2, size2, parr3);
     ShowArray(parr3, size3);
-    cout << "The recers way: ";
+    cout << "Task2.Need to show the recers way:\n";
+    ShowRevers(parr3, size3);
+    cout << "Task3. Given 2 arrays, need to copy the first array to the second in revers way.\n give me the size of the first array: ";
+    int size4;
+    cin >> size4;
+    int* parr4 = new int[size4];
+    int* parr5 = new int[size4];
+    FillOut(parr4, size4);
+    ShowArray(parr4, size4);
+    cout << "The second array is:\n";
+    CopyRevers(parr4, parr5, size4);
+    ShowArray(parr5, size4);
     delete []parr1;
     delete []parr2;
     delete []parr3;
-
-    /*int* parr4 = new int[size4];*/
+    delete []parr4;
+    delete []parr5;
 }
