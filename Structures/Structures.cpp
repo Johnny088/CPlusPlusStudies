@@ -18,6 +18,10 @@ struct rectangle {
     int height;
     int width;
 };
+struct line {
+    int x;
+    int y;
+};
 void FillOut(rectangle &rec1)
 {
     cout << "Enter the height: ";
@@ -35,24 +39,11 @@ void ShowRectangle(rectangle& rec1)
     {
         for (int i = 0; i < rec1.width; i++)
         {
-            cout << "* ";
+            cout << "*";
         }
         cout << "\n";
     }
 }
-//void setpos(int x, int y) {
-//
-//    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-//
-//    COORD position;
-//
-//    position.X = x;
-//
-//    position.Y = y;
-//
-//    SetConsoleCursorPosition(hConsole, position);
-//
-//}
 void SetPos(int x, int y)
 {
     COORD c;
@@ -63,41 +54,47 @@ void SetPos(int x, int y)
 void ChangePosition(rectangle& rec1)
 {
     int x, y;
-    x = 50;
-    y = 50;
-    
-
-    /*cout << "Enter X and Y of the position you wanna change fo the rectangle\nx: ";
+    cout << "Enter X and Y of the position you wanna change fo the rectangle\nx: ";
     cin >> x;
     cout << "\ny: ";
-    cin >> y;*/
+    cin >> y;
+    system("cls");
     for (int i = 0; i <rec1.height; i++)
     {
+        
         for (int j = 0; j < rec1.width; j++)
         {
-            SetColor(12);
-            SetPos(y+i, x+j);
-            cout << "* ";
             
-        }
-        
-        
+            SetColor(10);
+            SetPos(x+j,y+i);
+            cout << "*";
+            
+        }   
     }
+    cout << "\n";
     SetColor(7);
 
+}
+void distance(line& point1, line& point2)
+{
+    int sum1 = point1.x + point1.y;
+    int sum2 = point2.x + point2.y;
+    int dist;
+    if (sum2 > sum1)
+        dist = sum2 - sum1;
+    else
+        dist = sum1 - sum2;
+    cout << "The distance between these points is: " << dist << "\n";
 }
 
 int main()
 {
     rectangle rec1;
-    /*FillOut(rec);
-    Show(rec);
-    ShowRectangle(rec);*/
     cout << "Task1 need to make some functions for inicialization rectangle, changing position, changing the size.\n";
     int choice;
     do
     {
-        cout << "Enter the operation: \n1 - inicialization rectangle.\n2 - changing position.\n3 - changing the size.\n4 - showing the rectangle.\n5 - Showing changed rectangle\n0 - exit\n Enter the choice: ";
+        cout << "\n1 - inicialization rectangle.\n2 - changing position.\n3 - changing the size.\n4 - showing the rectangle.\n5 - Changing the size\n0 - exit\nEnter the operation: ";
         cin >> choice;
         switch (choice)
         {
@@ -112,6 +109,9 @@ int main()
         case 4:
             ShowRectangle(rec1);
             break;
+        case 5:
+            FillOut(rec1);
+            break;
         case 0:
             break;
         default:
@@ -120,5 +120,15 @@ int main()
         }
 
     } while (choice != 0);
-   
+    line point1;
+    line point2;
+    cout << "\nTask2 need to determine the distance between two points it two-dimensional coordinates.\n point one:\nX - ";
+    cin >> point1.x;
+    cout << "\nY - ";
+    cin >> point1.y;
+    cout << "point two:\nX - ";
+    cin >> point2.x;
+    cout << "\nY - ";
+    cin >> point2.y;
+    distance(point1, point2);
 }
