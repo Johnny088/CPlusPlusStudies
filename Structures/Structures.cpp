@@ -18,45 +18,78 @@ struct rectangle {
     int height;
     int width;
 };
-void FillOut(rectangle &task1)
+void FillOut(rectangle &rec1)
 {
     cout << "Enter the height: ";
-    cin >> task1.height;
+    cin >> rec1.height;
     cout << "Enter the width: ";
-    cin >> task1.width;
+    cin >> rec1.width;
 }
-void Show(rectangle& task1)
+void Show(rectangle& rec1)
 {
-    cout << "The height is: " << task1.height << "\nThe width is: " << task1.width << "\n";
+    cout << "The height is: " << rec1.height << "\nThe width is: " << rec1.width << "\n";
 }
-void ShowRectangle(rectangle& task1)
+void ShowRectangle(rectangle& rec1)
 {
-    for (int i = 0; i < task1.height; i++)
+    for (int i = 0; i < rec1.height; i++)
     {
-        for (int i = 0; i < task1.width; i++)
+        for (int i = 0; i < rec1.width; i++)
         {
             cout << "* ";
         }
         cout << "\n";
     }
 }
-void setpos(int x, int y) {
+//void setpos(int x, int y) {
+//
+//    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+//
+//    COORD position;
+//
+//    position.X = x;
+//
+//    position.Y = y;
+//
+//    SetConsoleCursorPosition(hConsole, position);
+//
+//}
+void SetPos(int x, int y)
+{
+    COORD c;
+    c.X = x;
+    c.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+}
+void ChangePosition(rectangle& rec1)
+{
+    int x, y;
+    x = 50;
+    y = 50;
+    
 
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-
-    COORD position;
-
-    position.X = x;
-
-    position.Y = y;
-
-    SetConsoleCursorPosition(hConsole, position);
+    /*cout << "Enter X and Y of the position you wanna change fo the rectangle\nx: ";
+    cin >> x;
+    cout << "\ny: ";
+    cin >> y;*/
+    for (int i = 0; i <rec1.height; i++)
+    {
+        for (int j = 0; j < rec1.width; j++)
+        {
+            SetColor(12);
+            SetPos(y+i, x+j);
+            cout << "* ";
+            
+        }
+        
+        
+    }
+    SetColor(7);
 
 }
 
 int main()
 {
-    rectangle rec;
+    rectangle rec1;
     /*FillOut(rec);
     Show(rec);
     ShowRectangle(rec);*/
@@ -69,14 +102,15 @@ int main()
         switch (choice)
         {
         case 1:
-            FillOut(rec);
+            FillOut(rec1);
             break;
         case 2:
+            ChangePosition(rec1);
             break;
         case 3:
             break;
         case 4:
-            ShowRectangle(rec);
+            ShowRectangle(rec1);
             break;
         case 0:
             break;
