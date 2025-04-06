@@ -94,7 +94,7 @@ int main()
     int choice;
     do
     {
-        cout << "\n1 - inicialization rectangle.\n2 - changing position.\n3 - changing the size.\n4 - showing the rectangle.\n5 - Changing the size\n0 - exit\nEnter the operation: ";
+        cout << "\n1 - inicialization rectangle.\n2 - changing position.\n3 - changing the size.\n4 - showing the rectangle.\n0 - exit\nEnter the operation: ";
         cin >> choice;
         switch (choice)
         {
@@ -105,12 +105,10 @@ int main()
             ChangePosition(rec1);
             break;
         case 3:
+            FillOut(rec1);
             break;
         case 4:
             ShowRectangle(rec1);
-            break;
-        case 5:
-            FillOut(rec1);
             break;
         case 0:
             break;
