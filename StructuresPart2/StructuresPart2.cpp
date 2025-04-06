@@ -55,18 +55,6 @@ void EditBook(library book[])
 }
 void menu(library book[])
 {
-    /*library book[size];
-
-    book[0] = { "The great getsby", "Scott Finzgerald", "Novel", "Charles Scribner's Sons"};
-    book[1] = { "Harry Potter and the Sorcerer's Stone", "J.K. Rowling", "fantasy", "bloombury"};
-    book[2] = { "The catcher in the river", "J.D. Salinger", "fiction", "Litle"};
-    book[3] = { "The lord of the ring", "J.R.R. Tolkien", "fantasy", "Alien" };
-    book[4] = { "The Hobbit", "J.R.R. Tolkien", "fantasy", "alien"};
-    book[5] = { "The alchemist", "J.D. Salinger", "fiction", "little" };
-    book[6] = { "Brave ne world", "Aldous Huxley", "science fiction", "chatto"};
-    book[7] = { "The picture of Dorifn Gray", "Oscar Wilde", "gotgic Fiction", "Lippincott's Monthly Magazine" };
-    book[8] = { "One hundred years oh Solitude", "Gabriel Garcia Marquez", "fiction", "Editorial Sudamericana" };
-    book[9] = { "The dairy of a young girl", "Anne Frank", "Biografy", "contact Publishing" };*/
     int choice;
     
     
