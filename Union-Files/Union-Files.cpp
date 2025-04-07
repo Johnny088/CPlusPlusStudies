@@ -69,7 +69,7 @@ int main()
     int j = 0;
     char buffer3[size];
     buffer3[len] = '\0';
-    for (int i = len-1; i > 0; i--)
+    for (int i = len-1; i >= 0; i--)
     {
         
         buffer3[j] = buffer2[i];

@@ -37,6 +37,16 @@ void ShowAllBoooks(library book[])
     }
 
 }
+void ShowOneBook(library book)
+{
+    
+        cout << "The name of the book: #" << "\t" << book.name << "\n";
+        cout << "The autor of the book: #"  << "\t" << book.autor << "\n";
+        cout << "The publisher of the book: #" << "\t" << book.publisher << "\n";
+        cout << "The genre of the book: #" << "\t" << book.genre << "\n\n";
+    
+
+}
 void EditBook(library book[])
 {
     int index;
@@ -53,10 +63,20 @@ void EditBook(library book[])
     cin >> book[index-1].genre;
     
 }
+void SearchAutor(library book[], char autor[])
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (strcmp(book[i].autor, autor) == 0)
+        {
+            ShowOneBook(book[i]);
+        }
+    }
+}
 void menu(library book[])
 {
     int choice;
-    
+    char NameOfAutor[20];
     
     do
     {
@@ -64,6 +84,7 @@ void menu(library book[])
         cout << "4 - searching the book using the autor's name \n5 - searching the book using the name of the book \n6 - sorting the array by using the name of the books\n";
         cout << "7 - sorting the array by using the autor of the books \n8 - sorting the array by using the publisher of the books \n0 - Exit\n";
         cin >> choice;
+        cin.ignore();
         switch (choice)
         {
         case 1:
@@ -74,6 +95,9 @@ void menu(library book[])
             ShowAllBoooks(book);
             break;
         case 3:
+            cout << "Enter the  Autor's name:\n";
+            cin.getline(NameOfAutor,20);
+            SearchAutor(book, NameOfAutor);
             break;
         case 4:
             break;
