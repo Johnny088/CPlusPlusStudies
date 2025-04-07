@@ -76,6 +76,7 @@ int main()
         j ++;
         
     }
+    buffer3[j] = '\0';
     if (!fout2)
     {
         SetColor(12); cout << "Something went wrong\n"; SetColor(7);
