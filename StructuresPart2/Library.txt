@@ -1,0 +1,60 @@
+The book number: #1
+The great getsby
+Scott Finzgerald
+Charles Scribner's Sons
+Novel
+
+The book number: #2
+Harry Potter and the Sorcerer's Stone
+J.K. Rowling
+bloombury
+fantasy
+
+The book number: #3
+The catcher in the river
+J.D. Salinger
+Litle
+fiction
+
+The book number: #4
+The lord of the ring
+J.R.R. Tolkien
+Alien
+fantasy
+
+The book number: #5
+The Hobbit
+J.R.R. Tolkien
+alien
+fantasy
+
+The book number: #6
+The alchemist
+J.D. Salinger
+little
+fiction
+
+The book number: #7
+Brave ne world
+Aldous Huxley
+chatto
+science fiction
+
+The book number: #8
+The picture of Dorifn Gray
+Oscar Wilde
+Lippincott's Monthly Magazine
+gotgic Fiction
+
+The book number: #9
+One hundred years oh Solitude
+Gabriel Garcia Marquez
+Editorial Sudamericana
+fiction
+
+The book number: #10
+The dairy of a young girl
+Anne Frank
+contact Publishing
+Biografy
+

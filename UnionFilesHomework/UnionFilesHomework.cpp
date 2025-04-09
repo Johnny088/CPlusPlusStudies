@@ -81,7 +81,8 @@ int main()
     }
     for (int i = 0; i < size; i++)
     {
-        if (buffer1[1] == '\0')
+        if (buffer1[i] == '\0')
+            break;
         if (isalpha(buffer1[i]))
         {
             characters++;

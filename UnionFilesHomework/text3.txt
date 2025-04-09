@@ -1,5 +1,5 @@
 Amount of symbols is: 245
-Amount of characters is: 0
+Amount of characters is: 195
 Amount of vowels is: 73
 Amount of consonants is: 122
 Amount of numbers is: 4

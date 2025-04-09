@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <fstream>
 using namespace std;
 #define size 10 
 struct library {
@@ -110,6 +111,7 @@ void menu(library book[])
         case 8:
             break;
         case 0:
+            break;
         default:
             SetColor(12); cout << "your choice is incorrect\n"; SetColor(7); 
             break;
@@ -117,8 +119,37 @@ void menu(library book[])
 
     } while (choice != 0);
 }
+void WriteToFile(library book[])
+{
+    ofstream bout("Library.txt");
+    for (int i = 0; i < size; i++)
+    {
+        bout << "The book number: #" <<i +1 <<"\n";
+        bout << book[i].name << "\n";
+        bout << book[i].autor << "\n";
+        bout << book[i].genre << "\n";
+        bout << book[i].publisher << "\n\n";
+    }
+    bout.close();
+    
+}
+void ReadFile(library book[])
+{
+    ifstream bin("library.txt");
+    char temp[5000];
+    for (int i = 0; i < size*6; i++)
+    {
+        bin.getline(temp, 5000);
+        cout << temp << "\n";
+
+    }
+    
+    
+    
+}
 int main()
 {
+    
     library book[size];
     book[0] = { "The great getsby", "Scott Finzgerald", "Novel", "Charles Scribner's Sons" };
     book[1] = { "Harry Potter and the Sorcerer's Stone", "J.K. Rowling", "fantasy", "bloombury" };
@@ -132,5 +163,6 @@ int main()
     book[9] = { "The dairy of a young girl", "Anne Frank", "Biografy", "contact Publishing" };
 
     menu(book);
-    
+    WriteToFile(book);
+    ReadFile(book);
 }
