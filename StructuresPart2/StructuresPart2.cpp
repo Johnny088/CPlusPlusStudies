@@ -133,7 +133,7 @@ void WriteToFile(library book[])
     bout.close();
     
 }
-void ReadFile(library book[])
+void ReadFile()
 {
     ifstream bin("library.txt");
     char temp[5000];
@@ -143,7 +143,7 @@ void ReadFile(library book[])
         cout << temp << "\n";
 
     }
-    
+    bin.close();
     
     
 }
@@ -164,5 +164,5 @@ int main()
 
     menu(book);
     WriteToFile(book);
-    ReadFile(book);
+    ReadFile();
 }
