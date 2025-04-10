@@ -48,12 +48,15 @@ void ReadFile()
     }
     else
     {
+        SetColor(14);
+        cout << "The data from file:\n";
         for (int i = 0; i < 3; i++)
         {
             char buffer[500];
             fin1.getline(buffer, 500);
-            cout << buffer << "\n";
+            cout << buffer << "\n"; 
         }
+        SetColor(7);
         fin1.close();
     }
 }
@@ -90,15 +93,19 @@ int main()
             fout1 << "x = " << point.getx() << "\n";
             fout1 << "y = " << point.gety() << "\n";
             fout1 << "z = " << point.getz() << "\n";
-            fout1.close();
+            fout1.close(); SetColor(10);
+            cout << "Date was added successfuly to the file.\n"; SetColor(7);
             break;
         case 4:
             ReadFile();
             break;
         case 0:
+            SetColor(6);
             cout << "Have a nice day\n";
+            SetColor(7);
             break;
         default:
+            SetColor(12); cout << "your choice is incorrect\n"; SetColor(7);
             break;
         }
     } while (choice != 0);
