@@ -49,7 +49,7 @@ void ReadFile()
     else
     {
         SetColor(14);
-        cout << "The data from file:\n";
+        cout << "The data from the file:\n";
         for (int i = 0; i < 3; i++)
         {
             char buffer[500];
