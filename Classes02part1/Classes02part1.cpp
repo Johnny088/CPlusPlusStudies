@@ -249,6 +249,7 @@ int main()
     cout << "31 - get average\n0 - exit\nEnter your choice : ";
     SetColor(14);
         cin >> choice;
+        cin.ignore();
         system("cls");
         cout << "\n";
         switch (choice)
@@ -293,7 +294,7 @@ int main()
             break;
         case 9:
             
-            cout << "Enter the city: "; cin >> TempString;
+            cout << "Enter the city: "; getline(cin, TempString);
             student.SetCity(TempString);
             break;
         case 10:
