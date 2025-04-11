@@ -236,13 +236,15 @@ int main()
     string TempString;
     int TempInt;
     float TempFloat;
-    cout << "\t\t\tData of the students:\n1 - showing all information of the student\n2 - set name\n3 - set middlename\4 - set lastname\5 - set the day of birth\n";
-    cout << "6 - set the month of the bith\n7 - set the year of the birth\n8 - set the phone\n9 - set the city\n10 - set the coutry\n11 - set the name of the University\n";
-    cout << "12 - set the sity if the university\n13 - set the country of the University\n14 - set the group\n15 - add a mark\n16 - showing the average\n - get name of the student\n";
-    cout << "18 - get the middle name if the student\n19 - get the last name of the student\n20 - get birthday\n21 - get birthmonth\n22 - get birthyear\n23 - get the phone\n";
-    cout << "24 - get city\n25 - get country\n26 - get the university's name\n27 - get the University's city\n28 - get the University's country\n29 - get group\n30 - get marks\n0 - exit\n";
+    
     do
     {
+    cout << "\t\t\tData of the students:\n1 - showing all information of the student\n2 - set name\n3 - set middlename\4 - set lastname\5 - set the day of birth\n";
+    cout << "6 - set the month of the bith\n7 - set the year of the birth\n8 - set the phone\n9 - set the city\n10 - set the coutry\n11 - set the name of the University\n";
+    cout << "12 - set the sity if the university\n13 - set the country of the University\n14 - set the group\n15 - add a mark\n16 - showing the average\n17 - get name of the student\n";
+    cout << "18 - get the middle name if the student\n19 - get the last name of the student\n20 - get birthday\n21 - get birthmonth\n22 - get birthyear\n23 - get the phone\n";
+    cout << "24 - get city\n25 - get country\n26 - get the university's name\n27 - get the University's city\n28 - get the University's country\n29 - get group\n30 - get marks\n0 - exit\n\n";
+    
         cin >> choice;
         switch (choice)
         {
