@@ -54,7 +54,6 @@ public:
         marks = nullptr;
         markCount = 0;
         average = 0;
-        cout << " Help Me\n";
     }
     void Print()
     {
@@ -76,8 +75,9 @@ public:
         {
             cout << marks[i] << " ";
         }
-        cout << markCount << endl;
-        cout << average << endl;
+        cout << "\nAmoutn of grades is: " << markCount << endl;
+        /*cout << average << "\n";*/
+        SetAverage();
        
     }
     
@@ -153,9 +153,10 @@ public:
         float sum = 0;
         for (int i = 0; i < markCount; i++)
         {
-            sum += markCount;
+            sum += marks[i];
         }
         average = (float)sum / markCount;
+        cout << "The Average is: " << average << "\n";
     }
     void Clean1()
     {
@@ -239,121 +240,151 @@ int main()
     
     do
     {
-    cout << "\t\t\tData of the students:\n1 - showing all information of the student\n2 - set name\n3 - set middlename\4 - set lastname\5 - set the day of birth\n";
+        SetColor(3);
+    cout << "\t\t\tData of the students:\n1 - showing all information of the student\n2 - set name\n3 - set middlename\n4 - set lastname\n5 - set the day of birth\n";
     cout << "6 - set the month of the bith\n7 - set the year of the birth\n8 - set the phone\n9 - set the city\n10 - set the coutry\n11 - set the name of the University\n";
     cout << "12 - set the sity if the university\n13 - set the country of the University\n14 - set the group\n15 - add a mark\n16 - showing the average\n17 - get name of the student\n";
     cout << "18 - get the middle name if the student\n19 - get the last name of the student\n20 - get birthday\n21 - get birthmonth\n22 - get birthyear\n23 - get the phone\n";
-    cout << "24 - get city\n25 - get country\n26 - get the university's name\n27 - get the University's city\n28 - get the University's country\n29 - get group\n30 - get marks\n0 - exit\n\n";
-    
+    cout << "24 - get city\n25 - get country\n26 - get the university's name\n27 - get the University's city\n28 - get the University's country\n29 - get group\n30 - get marks\n";
+    cout << "31 - get average\n0 - exit\nEnter your choice : ";
+    SetColor(14);
         cin >> choice;
+        system("cls");
+        cout << "\n";
         switch (choice)
         {
         case 1:
             student.Print();
             break;
         case 2:
-             cin >> TempString;
+            
+            cout << "Enter the name: "; cin >> TempString;
              student.SetName(TempString);
              break;
         case 3:
-            cin >> TempString;
-            student.SetMidleName(TempString);
+            
+            cout << "Enter the middlename: "; cin >> TempString;
+             student.SetMidleName(TempString);
             break;
         case 4:
-            cin >> TempString;
-            student.SetLastName(TempString);
+            
+            cout << "Enter the lastname: "; cin >> TempString;
+             student.SetLastName(TempString);
             break;
         case 5:
-            cin >> TempInt;
-            student.SetBirthday(TempInt);
+            
+            cout << "Enter the dirth day: "; cin >> TempInt;
+             student.SetBirthday(TempInt);
             break;
         case 6:
-            cin >> TempInt;
+            
+            cout << "Enther the month of the birth: "; cin >> TempInt;
             student.SetBirthMonth(TempInt);
             break;
         case 7:
-            cin >> TempInt;
+            
+            cout << "Enter the year of the Birth: "; cin >> TempInt;
             student.SetBirthYear(TempInt);
             break;
         case 8:
-            cin >> TempString;
+            
+            cout << "Enter the phone's number: "; cin >> TempString;
             student.SetPhone(TempString);
             break;
         case 9:
-            cin >> TempString;
+            
+            cout << "Enter the city: "; cin >> TempString;
             student.SetCity(TempString);
             break;
         case 10:
-            cin >> TempString;
+            
+            cout << "Enter the country: "; cin >> TempString;
             student.SetCountry(TempString);
             break;
         case 11:
-            cin >> TempString;
+            
+            cout << "Enter the University's name: "; cin >> TempString;
             student.SetUniversityName(TempString);
             break;
         case 12:
-            cin >> TempString;
+            
+            cout << "Enter the University's city: "; cin >> TempString;
             student.SetUniversityCity(TempString);
             break;
         case 13:
-            cin >> TempString;
-            student.SetUniversityCountry(TempString);
+            
+            cout << "Enter the University's country: "; cin >> TempString;
+             student.SetUniversityCountry(TempString);
             break;
         case 14:
-            cin >> TempString;
+           
+            cout << "Enter the student's group: "; cin >> TempString;
             student.SetGroup(TempString);
             break;
         case 15:
-            cin >> TempInt;
+            
+            cout << "Enter the mark, you wanna add: "; cin >> TempInt;
             student.AddMarks(TempInt);
             break;
         case 16:
+            
             student.SetAverage();
             break;
         case 17:
-            student.GetName();
+            
+            cout << student.GetName() << "\n";
             break;
         case 18:
-            student.GetMidleName();
+            
+            cout << student.GetMidleName() << "\n";
             break;
         case 19:
-            student.GetLastName();
+            
+            cout << student.GetLastName() << "\n";
             break;
         case 20:
-            student.GetBirthday();
+            
+            cout << student.GetBirthday() << "\n";
             break;
         case 21:
-            student.GetBirthMonth();
+            
+            cout << student.GetBirthMonth() << "\n";
             break;
         case 22:
-            student.GetBirthYear();
+            
+            cout << student.GetBirthYear() << "\n";
             break;
         case 23:
-            student.GetPhone();
+            cout << student.GetPhone() << "\n";
             break;
         case 24:
-            student.GetCity();
+            cout << student.GetCity() << "\n";
             break;
         case 25:
-            student.GetCountry();
+            cout << student.GetCountry() << "\n";
             break;
         case 26:
-            student.GetUniversityName();
+            cout << student.GetUniversityName() << "\n";
             break;
         case 27:
-            student.GetUniversityCity();
+            cout << student.GetUniversityCity() << "\n";
             break;
         case 28:
-            student.GetUniversityCountry();
+            cout << student.GetUniversityCountry() << "\n";
             break;
         case 29:
-            student.GetGroup();
+            cout << student.GetGroup() << "\n";
             break;
         case 30:
             student.GetMarks();
+            cout << "\n";
+            break;
+        case 31:
+            student.SetAverage();
             break;
         case 0:
             cout << "Have a nice day\n";
+            SetColor(7);
             break;
         default:
             SetColor(12); cout << "your choice is incorrect\n"; SetColor(7);
