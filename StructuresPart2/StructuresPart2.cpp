@@ -74,6 +74,10 @@ void SearchAutor(library book[], char autor[])
         }
     }
 }
+void WriteToFile(library book[]);
+void ReadFile();
+
+
 void menu(library book[])
 {
     int choice;
@@ -83,7 +87,8 @@ void menu(library book[])
     {
         cout << "Welcome to the library. Enter your choice: \n1 - edditing books into the library \n2 - showing all books\n3 - searching the book using the autor's name\n";
         cout << "4 - searching the book using the autor's name \n5 - searching the book using the name of the book \n6 - sorting the array by using the name of the books\n";
-        cout << "7 - sorting the array by using the autor of the books \n8 - sorting the array by using the publisher of the books \n0 - Exit\n";
+        cout << "7 - sorting the array by using the autor of the books \n8 - sorting the array by using the publisher of the books\n";
+        SetColor(11); cout << "9 - write to the file\n10 - read from the file\n"; SetColor(7); cout << "0 - Exit\n";
         cin >> choice;
         cin.ignore();
         switch (choice)
@@ -110,6 +115,10 @@ void menu(library book[])
             break;
         case 8:
             break;
+        case 9:
+            WriteToFile(book);
+        case 10:
+            ReadFile();
         case 0:
             break;
         default:
@@ -136,13 +145,14 @@ void WriteToFile(library book[])
 void ReadFile()
 {
     ifstream bin("library.txt");
-    char temp[5000];
+    char temp[5000]; SetColor(14);
     for (int i = 0; i < size*6; i++)
     {
         bin.getline(temp, 5000);
         cout << temp << "\n";
 
     }
+    SetColor(7);
     bin.close();
     
     
@@ -163,6 +173,6 @@ int main()
     book[9] = { "The dairy of a young girl", "Anne Frank", "Biografy", "contact Publishing" };
 
     menu(book);
-    WriteToFile(book);
-    ReadFile();
+    
+    
 }
