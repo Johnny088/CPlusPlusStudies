@@ -40,11 +40,12 @@ void ShowAllBoooks(library book[])
 }
 void ShowOneBook(library book)
 {
-    
-        cout << "The name of the book: #" << "\t" << book.name << "\n";
-        cout << "The autor of the book: #"  << "\t" << book.autor << "\n";
-        cout << "The publisher of the book: #" << "\t" << book.publisher << "\n";
-        cout << "The genre of the book: #" << "\t" << book.genre << "\n\n";
+    SetColor(14);
+    cout << "The name of the book: " << "\t" << book.name << "\n";
+    cout << "The autor of the book: "  << "\t" << book.autor << "\n";
+    cout << "The publisher of the book: " << "\t" << book.publisher << "\n";
+    cout << "The genre of the book: " << "\t" << book.genre << "\n\n"; SetColor(7);
+
     
 
 }
@@ -74,6 +75,16 @@ void SearchAutor(library book[], char autor[])
         }
     }
 }
+void SearchName(library book[], char name[])
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (strcmp(book[i].name, name) == 0)
+        {
+            ShowOneBook(book[i]);
+        }
+    }
+}
 void WriteToFile(library book[]);
 void ReadFile();
 
@@ -82,13 +93,18 @@ void menu(library book[])
 {
     int choice;
     char NameOfAutor[20];
+    char NameOfBook[50];
     
     do
     {
+        SetColor(9);
         cout << "Welcome to the library. Enter your choice: \n1 - edditing books into the library \n2 - showing all books\n3 - searching the book using the autor's name\n";
-        cout << "4 - searching the book using the autor's name \n5 - searching the book using the name of the book \n6 - sorting the array by using the name of the books\n";
-        cout << "7 - sorting the array by using the autor of the books \n8 - sorting the array by using the publisher of the books\n";
-        SetColor(11); cout << "9 - write to the file\n10 - read from the file\n"; SetColor(7); cout << "0 - Exit\n";
+        cout << "4 - searching the book using the book's name\n"; SetColor(12);
+        cout << "doesn't work yet:\n";
+        cout << "5 - sorting the array by using the name of the books\n";
+        cout << "6 - sorting the array by using the autor of the books \n7 - sorting the array by using the publisher of the books\n";
+        SetColor(11); cout << "New function from another homework\n8 - write to the file\n9 - read from the file\n"; SetColor(7); 
+        cout << "0 - Exit\nEnter your choice: ";
         cin >> choice;
         cin.ignore();
         switch (choice)
@@ -106,6 +122,9 @@ void menu(library book[])
             SearchAutor(book, NameOfAutor);
             break;
         case 4:
+            cout << "Enter the books's name:\n";
+            cin.getline(NameOfBook, 50);
+            SearchName(book, NameOfBook);
             break;
         case 5:
             break;
@@ -114,10 +133,8 @@ void menu(library book[])
         case 7:
             break;
         case 8:
-            break;
-        case 9:
             WriteToFile(book);
-        case 10:
+        case 9:
             ReadFile();
         case 0:
             break;
