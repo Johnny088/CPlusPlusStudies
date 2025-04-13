@@ -3,13 +3,6 @@
 #include <fstream>
 #include <string>
 using namespace std;
-#define size 10 
-struct library {
-    char name[100];
-    char autor[100];
-    char publisher[100];
-    char genre[100];
-};
 void SetColor(int color)//0-15
 {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
