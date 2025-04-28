@@ -48,8 +48,8 @@ public:
 		for (int i = 0; i < countVagons; i++)
 		{
 			cout << "\n\tthe vagon " << i+1 << left << setw(13) <<"\nNumber " << setw(3) << vagons[i].number << endl;
-			cout << left << setw(12) << "Plases: " << setw(3) << vagons[i].places << endl;
-			cout << left << setw(12) <<"passangers " <<setw(3) << vagons[i].passanger << endl;
+			cout << left << setw(12) << "Places: " << setw(3) << vagons[i].places << endl;
+			cout << left << setw(12) <<"passengers " <<setw(3) << vagons[i].passanger << endl;
 		}
 		SetColor(7);
 		cout << "\n";
@@ -59,7 +59,7 @@ public:
 		int number, places, passangers;
 		cout << "Enter the number of the vagon: "; cin >> number;
 		cout << "Enter the number of the places: "; cin >> places;
-		cout << "Enter the number of the passangers: "; cin >> passangers;
+		cout << "Enter the number of the passengers: "; cin >> passangers;
 		Vagon newVagon = { number,places,passangers };
 		countVagons++;
 		Vagon* temp = new Vagon[countVagons];
