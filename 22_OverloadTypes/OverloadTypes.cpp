@@ -21,10 +21,10 @@ public:
         AmoutnOfPassangers = "default";
         MaxOfPlaces = "default";
     }
-    void init()
+    /*void init()
     {
         string
-    }
+    }*/
 
 
 };
