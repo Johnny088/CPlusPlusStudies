@@ -160,9 +160,7 @@ void menu()
 			v1.SetByUser();
 			break;
 		case 4:
-			SetColor(12);
 			v1.add();
-			cout << "doesn't work\n";
 			break;
 		case 5:
 			v1.Min();
