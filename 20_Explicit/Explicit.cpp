@@ -77,12 +77,12 @@ public:
 		}
 		cout << "\n";
 	}
-	/*void add()
+	void add()
 	{
 		int value;
 		cout << "Enter the value: "; cin >> value;
 		size++;
-		Array* temp = new Array[size];
+		int* temp = new int[size];
 		for (int i = 0; i < size-1; i++)
 		{
 			temp[i] = arr[i];
@@ -93,7 +93,7 @@ public:
 			delete[]arr;
 		}
 		arr = temp;
-	}*/
+	}
 	void Min()
 	{
 		int min = arr[0];
@@ -161,6 +161,7 @@ void menu()
 			break;
 		case 4:
 			SetColor(12);
+			v1.add();
 			cout << "doesn't work\n";
 			break;
 		case 5:
