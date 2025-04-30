@@ -152,7 +152,7 @@ public:
     {
         int id;
         SetColor(6);
-        cout << "Enter the id of the customer to delete him phone numbers: "; cin >> id;
+        cout << "Enter the id of the customer to delete his phone numbers: "; cin >> id;
         account[id - 1].CleanNumbers();
     }
     void SearchV1()
