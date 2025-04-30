@@ -141,7 +141,7 @@ public:
 void menu()
 {
 	Array v1(10);
-	int Menu, Size;
+	int Menu;
 	do
 	{
 		SetColor(11);
