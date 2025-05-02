@@ -43,7 +43,28 @@ public:
     }
     void print()
     {
-        cout << hours << ":" << minutes << ":" << seconds;
+        cout << hours << ":" << minutes << ":" << seconds << "\n";
+    }
+    Time PlusSecond()
+    {
+        Time res((*this).TotalSecond() + 1);
+        return res;
+    }
+    bool operator >(const Time& other)
+    {
+        return (*this).TotalSecond() > other.TotalSecond();
+    }
+    bool operator <(const Time& other)
+    {
+        return (*this).TotalSecond() < other.TotalSecond();
+    }
+    bool operator ==(const Time& other)
+    {
+        return (*this).TotalSecond() == other.TotalSecond();
+    }
+    bool operator !=(const Time& other)
+    {
+        return (*this).TotalSecond() != other.TotalSecond();
     }
 };
 
@@ -53,5 +74,30 @@ int main()
     Time time(1, 50, 48);
     Time time2(1, 50, 48);
     Time result = time + time2;
-    result.print();
+    cout << "The summ of the time1 and time 2 is:\t"; result.print();
+    Time time3(1, 59, 59);
+    cout << "Time 3 is:\t"; time3.print();
+    Time res2 = time3.PlusSecond();
+    cout << "Adding one second to the 'time3':\t"; res2.print();
+    Time time4(6, 59, 43);
+    Time time5(5, 57, 43);
+    SetColor(6);
+    cout << "\nIf time4(6, 59, 43) > time5(5, 57, 43):\t";
+    bool res3;
+    res3 = time4 > (time5);
+    cout << res3;
+    SetColor(3);
+    cout << "\nIf time4(6, 59, 43) < time5(5, 57, 43):\t";
+    res3 = time4 < (time5);
+    cout << res3;
+    SetColor(6);
+    cout << "\nIf time4(6, 59, 43) == time5(5, 57, 43):\t";
+    res3 = time4 == (time5);
+    cout << res3;
+    SetColor(3);
+    cout << "\nIf time4(6, 59, 43) != time5(5, 57, 43):\t";
+    res3 = time4 != (time5);
+    cout << res3;
+    SetColor(12);
+    cout << "\nI know nothing how to use explicit in this case."; SetColor(7);
 }
