@@ -11,15 +11,16 @@ class Aircraft
 {
     string model;
     string type;
-    string AmountOfPassangers;
-    string MaxOfPlaces;
+    int MaxPlaces;
+    int AmountOfPassangers;
 public:
     Aircraft()
     {
         model = "default";
         type = "default";
-        AmountOfPassangers = "default";
-        MaxOfPlaces = "default";
+        MaxPlaces = 0;
+        AmountOfPassangers = 0;
+        
     }
     /*~Aircraft()
     {
@@ -29,17 +30,17 @@ public:
         }
     }*/
 };
-class Airplane
+class Airport
 {
     Aircraft* aircraft;
     int size;
 public:
-    Airplane()
+    Airport()
     {
         aircraft = nullptr;
         size = 0;
     }
-    ~Airplane()
+    ~Airport()
     {
         if (aircraft != nullptr)
         {
