@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip>
+//#include <iomanip>
 #include <Windows.h>
 #include <string>
 using namespace std;
@@ -11,23 +11,44 @@ class Aircraft
 {
     string model;
     string type;
-    string AmoutnOfPassangers;
+    string AmountOfPassangers;
     string MaxOfPlaces;
 public:
     Aircraft()
     {
         model = "default";
         type = "default";
-        AmoutnOfPassangers = "default";
+        AmountOfPassangers = "default";
         MaxOfPlaces = "default";
     }
-    /*void init()
+    /*~Aircraft()
     {
-        string
+        if (AmountOfPassangers != nullptr)
+        {
+            delete[]AmountOfPassangers;
+        }
     }*/
-
+};
+class Airplane
+{
+    Aircraft* aircraft;
+    int size;
+public:
+    Airplane()
+    {
+        aircraft = nullptr;
+        size = 0;
+    }
+    ~Airplane()
+    {
+        if (aircraft != nullptr)
+        {
+            delete[]aircraft;
+        }
+    }
 
 };
+
 
 int main()
 {

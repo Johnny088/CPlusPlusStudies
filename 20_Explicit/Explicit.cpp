@@ -146,7 +146,7 @@ void menu()
 	{
 		SetColor(11);
 		cout << "\tMain menu: \n1 - to fill out the array by random numbers \n2 - to turn all numbers into '0' \n3 - to set up the numbers by user\n";
-		cout << "4 - to add element \n5 - min of the numbers \6 -  maximum of the elements \n 7 - the average of the elements \n8 - print \n";  SetColor(7);
+		cout << "4 - to add element \n5 - min of the numbers \6 -  maximum of the elements \n7 - the average of the elements \n8 - print\n0 - exit\n";  SetColor(7);
 		cin >> Menu;
 		switch (Menu)
 		{
@@ -171,7 +171,7 @@ void menu()
 		case 7:
 			v1.average();
 			break;
-		case 9:
+		case 8:
 			v1.print();
 			break;
 		case 0:
