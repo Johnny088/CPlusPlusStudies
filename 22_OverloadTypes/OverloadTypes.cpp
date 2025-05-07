@@ -1,5 +1,4 @@
 #include <iostream>
-//#include <iomanip>
 #include <Windows.h>
 #include <string>
 using namespace std;
@@ -30,7 +29,7 @@ public:
         cout << "Model: " << this->model << "\n";
         cout << "Type: " << this->type << "\n";
         cout << "maximum places: " << this->MaxPlaces << "\n";
-        cout << "Amount of the passengers: " << this->AmountOfPassangers << "\n";
+        cout << "Amount of the passengers: " << this->AmountOfPassangers << "\n\n";
     }
     string gettype() const
     {
@@ -56,7 +55,7 @@ public:
 
 
 
-
+#pragma region MyFail
 class Airport
 {
     Aircraft* aircraft;
@@ -89,7 +88,7 @@ public:
         Aircraft newplane(modelT, typeT, places, passengers);
         size++;
         Aircraft* temp = new Aircraft[size];
-        for (int i = 0; i < size-1; i++)
+        for (int i = 0; i < size - 1; i++)
         {
             temp[i] = aircraft[i];
         }
@@ -100,7 +99,25 @@ public:
         }
         aircraft = temp;
         SetColor(10);
-        cout << "The Aircraft was added\nTotal sum of aircrafts is: " << this->size <<"\n"; SetColor(14);
+        cout << "The Aircraft was added\nTotal sum of aircrafts is: " << this->size << "\n"; SetColor(14);
+
+    }
+    void add(Aircraft newplane)
+    {
+        size++;
+        Aircraft* temp = new Aircraft[size];
+        for (int i = 0; i < size - 1; i++)
+        {
+            temp[i] = aircraft[i];
+        }
+        temp[size - 1] = newplane;
+        if (aircraft != nullptr)
+        {
+            delete[]aircraft;
+        }
+        aircraft = temp;
+        SetColor(10);
+        cout << "The Aircraft was added\nTotal sum of aircrafts is: " << this->size << "\n"; SetColor(14);
 
     }
     void print() const
@@ -124,14 +141,17 @@ public:
     {
         aircraft->getplaces();
     }
-    
-    /*friend bool operator ==(Airport& first, Airport& second);
-    friend void operator ++(Airport& other);
-    friend void operator --(Airport& other);*/
-    friend bool operator ==(Aircraft& first, Aircraft& second);
+    /*friend bool operator ==(Aircraft& first, Aircraft& second);
     friend void operator ++(Aircraft& other);
-    friend void operator --(Aircraft& other);
+    friend void operator --(Aircraft& other);*/
+
 };
+#pragma endregion
+
+
+
+    
+
 
 
 
@@ -153,25 +173,7 @@ inline void operator --(Aircraft& other)
 {
     other.AmountOfPassangers--;
 }
-//bool operator ==(Aircraft& first, Aircraft& second)
-//{
-//    return first.AmountOfPassangers == second.AmountOfPassangers;
-//}
-//bool operator ==(Airport& first, Airport& second)
-//{
-//    return first.type() == second.type();
-//}
-//void operator ++(Airport& other, int i)
-//{
-//    if (other.passengers() < other.places())
-//    {
-//        other.;
-//    }
-//}
-//void operator --(Airport& other, int i)
-//{
-//    other.aircraft--;
-//}
+
 #pragma endregion
 
 
@@ -179,10 +181,19 @@ void menu()
 {
     Airport v1;
     int choice; 
+    Aircraft a1("model", "12", 70, 12);
+    Aircraft a2("model", "12", 70, 12);
+    a1.printAir();
+    ++a1;
+    a1.printAir();
+    --a1;
+    a1.printAir();
+    bool res = a1 == a2;
+    cout << "Whether v1==v2: " << res;
     do
     {
         SetColor(11);
-        cout << "\t\tMain Menu: \n1 - to add one aircraft. \n2 - to add a passenger \n3 - to remove a passenger \n4 - to compare two aircrafts by using"; SetColor(3);
+        cout << "\n\t\tMain Menu: \n1 - to add one aircraft. Function is disabled \n2 - to add a passenger \n3 - to remove a passenger \n4 - to compare two aircrafts by using"; SetColor(3);
         cout << " type"; SetColor(11); cout << " or "; SetColor(3); cout << " amount of the passengers\n"; SetColor(11);
         cout << "5 - to add number of the passengers \n6 - to show all aircrafts \n0 - exit \nEnter the choice: "; 
         cin >> choice; SetColor(14);
@@ -192,14 +203,18 @@ void menu()
             v1.add();
             break;
         case 2:
+            v1.getaircrafts();
+            break;
+        case 3:
             break;
         case 6:
             v1.print();
             break;
-        /*case 0:
+        case 0:
             SetColor(7);
-            break;*/
+            break;
         default:
+            SetColor(12); cout << "your choice is incorrect\n"; SetColor(7);
             break;
         }
     } while (choice != 0);
@@ -209,5 +224,5 @@ void menu()
 int main()
 {
     menu();
-   
+    
 }
