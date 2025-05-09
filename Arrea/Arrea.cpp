@@ -20,7 +20,7 @@ int main()
 	{
 		cout << array1[i] << " ";
 	}
-	cout << endl << "Multiply all nambers is: " << multy << endl;
+	cout << endl << "Multiply all numbers is: " << multy << endl;
 	const int size2 = 7;
 	int array2[size2];
 	int sumplus = 0;
