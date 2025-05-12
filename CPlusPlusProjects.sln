@@ -95,6 +95,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication2", "Cons
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "28_SingleLinkedList.cpp", "28_SingleLinkedList.cpp\28_SingleLinkedList.cpp.vcxproj", "{32A2F00D-3242-4C87-A3E2-C989A7695BCE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "29_DoubleLinkedList", "29_DoubleLinkedList\29_DoubleLinkedList.vcxproj", "{904E7026-613C-41F2-9494-AE833C91D9D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -463,6 +465,14 @@ Global
 		{32A2F00D-3242-4C87-A3E2-C989A7695BCE}.Release|x64.Build.0 = Release|x64
 		{32A2F00D-3242-4C87-A3E2-C989A7695BCE}.Release|x86.ActiveCfg = Release|Win32
 		{32A2F00D-3242-4C87-A3E2-C989A7695BCE}.Release|x86.Build.0 = Release|Win32
+		{904E7026-613C-41F2-9494-AE833C91D9D0}.Debug|x64.ActiveCfg = Debug|x64
+		{904E7026-613C-41F2-9494-AE833C91D9D0}.Debug|x64.Build.0 = Debug|x64
+		{904E7026-613C-41F2-9494-AE833C91D9D0}.Debug|x86.ActiveCfg = Debug|Win32
+		{904E7026-613C-41F2-9494-AE833C91D9D0}.Debug|x86.Build.0 = Debug|Win32
+		{904E7026-613C-41F2-9494-AE833C91D9D0}.Release|x64.ActiveCfg = Release|x64
+		{904E7026-613C-41F2-9494-AE833C91D9D0}.Release|x64.Build.0 = Release|x64
+		{904E7026-613C-41F2-9494-AE833C91D9D0}.Release|x86.ActiveCfg = Release|Win32
+		{904E7026-613C-41F2-9494-AE833C91D9D0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
