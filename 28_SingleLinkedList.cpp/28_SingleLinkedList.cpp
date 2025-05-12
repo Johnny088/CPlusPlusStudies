@@ -139,11 +139,20 @@ public:
 	{
 		cout << "X : " << this->x << " . Y : " << y << endl;
 	}
+	friend ostream& operator <<(ostream& out, Point& value);
+	
 };
+ostream& operator <<(ostream& out, Point& value)
+{
+	out << "x: " << value.x << "\n";
+	out << "y: " << value.y <<"\n";
+	return out;
+}
 class Vector
 {
 	List<Point> points;
 	int size;
+
 public:
 	Vector()
 	{
@@ -151,18 +160,22 @@ public:
 	}
 	void AddPointToHead(Point value)
 	{
+		size++;
 		points.AddToHead(value);
 	}
 	void AddPointToTail(Point value)
 	{
+		size++;
 		points.AddToTail(value);
 	}
 	void DellPointFromHead()
 	{
+		size--;
 		points.DelBegin();
 	}
 	void DelPointFromTail()
 	{
+		size--;
 		points.DeleteFromTail();
 	}
 	void Printv1()
@@ -172,8 +185,8 @@ public:
 };
 int main()
 {
-	
-	Point p;
+
+	Vector p;
 
 	/*List<int> l;
 
@@ -193,5 +206,10 @@ int main()
 		l.DeleteFromTail();
 		l.PrintList();
 	}*/
+	p.Printv1();
+	cout << "-------------------------------------\n";
+	p.AddPointToHead(Point(5, 8));
+	cout << "-------------------------------------\n";
+	p.Printv1();
 
-
+}
