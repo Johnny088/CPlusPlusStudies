@@ -6,17 +6,17 @@ class Vector
 	int CountPoints;
 public:
 	Vector() : points(nullptr), CountPoints(0) {}
-	Vector(const Point& other);
-	Vector(Point&& other);
-	Vector operator =(Point&& other);
+	Vector(const Vector& other);
+	Vector(Vector&& other);
+	Vector operator =(Vector& other);
 
 	~Vector()
 	{
 		if (points != nullptr)
 			delete[]points;
 	}
-	void add();
-	void print();
+	void add(Point point);
+	void printm() const;
 
 };
 

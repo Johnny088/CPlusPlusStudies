@@ -4,7 +4,7 @@ using namespace std;
 
 void Point::print() const
 {
-	cout << "X: " << x << "\nY: " << y << "\n";
+	cout << "X: " << x << " Y: " << y << "\n----------------------\n";
 }
 
 Point Point::operator++()
