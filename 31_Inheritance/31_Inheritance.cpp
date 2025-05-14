@@ -94,7 +94,7 @@ int main()
 	Passport p1("AH", "3569825", "Johnny", "Douglas", "Stone");
 	p1.print();
 	ForeignPassport i1("AH", "3569825", "Johnny", "Douglas", "Stone", "Schengen", 1);
-	i1.Print();
+	i1.Print(); 
   
 }
 
