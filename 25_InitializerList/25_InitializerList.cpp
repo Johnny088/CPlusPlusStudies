@@ -57,74 +57,10 @@ public:
 		}
 		cout << endl;
 	}
-	void Max()
-	{
-		T maxV = arr[0];
-		for (int i = 0; i < size; i++)
-		{
-			if (maxV < arr[i])
-				maxV = arr[i];
-		}
-		cout << "Max of the values is: " << maxV << "\n";
-	}
-	void Min()
-	{
-		T minV = arr[0];
-		for (int i = 0; i < size; i++)
-		{
-			if (minV > arr[i])
-				minV = arr[i];
-		}
-		cout << "Min of the values is: " << minV << "\n";
-	}
-	void BubbleSort()
-	{
-		T temp;
-		for (int i = 0; i < size; i++)//20
-		{
-			for (int j = size - 1; j > i; j--)//19
-			{
-				//3 5 12 4 7 6 9 8
-				if (arr[j - 1] > arr[j])
-				{
-					temp = arr[j - 1];
-					arr[j - 1] = arr[j];
-					arr[j] = temp;
-				}
-			}
-		}
-	}
-	void BinarySearch()
-	{
-		T key;
-		cout << "Enter the value you wanna find: "; cin >> key; cout << "\n";
-		T B = 0, E = size - 1;
-		while (true)
-		{
-			int p = (B + E) / 2;
-			if (key > arr[p])
-			{
-				B = p + 1;
-			}
-			else if (key < arr[p])
-			{
-				E = p - 1;
-			}
-			else if (key == arr[p])
-			{
-				cout << key << "\n";
-				return;
-			}
-				
-
-			if (B > E)
-			{
-				SetColor(12); cout << "not found!\n"; SetColor(7);
-				return;
-			}
-
-		}
-	}
+	void Max();
+	void Min();
+	void BubbleSort();
+	void BinarySearch();
 
 
 	~Array()
@@ -135,6 +71,81 @@ public:
 
 };
 
+template<typename T>
+void Array<T>::Max()
+{
+	T maxV = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (maxV < arr[i])
+			maxV = arr[i];
+	}
+	cout << "Max of the values is: " << maxV << "\n";
+}
+
+template<typename T>
+void Array<T>::Min()
+{
+	T minV = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (minV > arr[i])
+			minV = arr[i];
+	}
+	cout << "Min of the values is: " << minV << "\n";
+}
+
+template<typename T>
+void Array<T>::BubbleSort()
+{
+	T temp;
+	for (int i = 0; i < size; i++)//20
+	{
+		for (int j = size - 1; j > i; j--)//19
+		{
+			//3 5 12 4 7 6 9 8
+			if (arr[j - 1] > arr[j])
+			{
+				temp = arr[j - 1];
+				arr[j - 1] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+}
+
+template<typename T>
+void Array<T>::BinarySearch()
+{
+	T key;
+	cout << "Enter the value you wanna find: "; cin >> key; cout << "\n";
+	T B = 0, E = size - 1;
+	while (true)
+	{
+		int p = (B + E) / 2;
+		if (key > arr[p])
+		{
+			B = p + 1;
+		}
+		else if (key < arr[p])
+		{
+			E = p - 1;
+		}
+		else if (key == arr[p])
+		{
+			cout << key << "\n";
+			return;
+		}
+
+
+		if (B > E)
+		{
+			SetColor(12); cout << "not found!\n"; SetColor(7);
+			return;
+		}
+
+	}
+}
 void main()
 {
 	Array <int> a1;
@@ -156,3 +167,5 @@ void main()
 	cout << "------- min -------\n";
 	a2.Min();
 }
+
+
