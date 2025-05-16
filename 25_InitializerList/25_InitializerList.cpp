@@ -23,35 +23,27 @@ public:
 	{
 		this->size = size;
 		arr = new int[size] {};
-		/*for (int i = 0; i < size; i++)
-		{
-			arr[i] = 0;
-		}*/
 	}
-	Array(const initializer_list<int>& list)
+	Array(const initializer_list<T>& list)
 	{
 		this->size = list.size();
-		arr = new int[size];
-		/*for (int i = 0; i < size; i++)
-		{
-			arr[i] = list[i];
-		}*/
+		arr = new T[size];
 		///foreach
 		int i = 0;
-		for (int elem : list)
+		for (T elem : list)
 		{
 			arr[i] = elem;
 			i++;
 		}
 	}
-	void Fill(const initializer_list<int>& list)
+	void Fill(const initializer_list<T>& list)
 	{
 		if (arr != nullptr)
 			delete[]arr;
 		this->size = list.size();//10 --> 3
-		arr = new int[size];
+		arr = new T[size];
 		int i = 0;
-		for (int elem : list)
+		for (T elem : list)
 		{
 			arr[i] = elem;
 			i++;
@@ -74,5 +66,10 @@ public:
 
 void main()
 {
+	Array <int> a1;
+	a1.Print();
+	Array <float> a2({ 10.45,20.3,30.2,40.7,50.5, });
+	a2.Print();
+
     
 }
