@@ -11,7 +11,7 @@ public:
 	Shape() :name("None"),area(0){}
 	Shape(string n):name(n), area(0){}
 	virtual void GetArea() {}
-	virtual void show() { cout << "name: " << name << endl; cout << "Area: " << area << "cm" << endl;
+	virtual void show() { cout << "-----------------\n" << "name: " << name << endl; cout << "Area: " << area << "cm" << endl;
 	}
 
 };
@@ -38,9 +38,21 @@ public:
 	TriangleM(string n, float a, float height) : Shape(n), a(a), height(height) {}
 	void GetArea() override
 	{
-		area = 1.0 /2.0 * a * height;
+		area = 0.5 * a * height;
 	}
 
+};
+class Square :public Shape
+{
+	float side;
+public:
+	Square() :side(0), Shape() {}
+	Square(string n,float v) :side(v), Shape(n) {}
+	void GetArea() override
+	{
+		area = side * side;
+	}
+	
 };
 int main()
 {
@@ -50,5 +62,8 @@ int main()
 	TriangleM trianglem("Triangle", 5, 7);
 	trianglem.GetArea();
 	trianglem.show();
+	Square square("square", 5);
+	square.GetArea();
+	square.show();
 }
 
