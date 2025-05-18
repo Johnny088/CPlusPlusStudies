@@ -11,7 +11,7 @@ class Stack
     int arr[Full+1];
     int LastElement;
     int MaxSize;
-    int* arr2;
+    /*int* arr2;*/
 public:
     Stack()
     {
@@ -24,7 +24,7 @@ public:
         arr[++LastElement] = rand() % 40;
         else
         {
-            MaxSize = LastElement * 2;
+            /*MaxSize = LastElement * 2;
             temp = new int[MaxSize];
             for (int i = 0; i < LastElement+1; i++)
             {
@@ -32,7 +32,8 @@ public:
             }
             if (arr2 != nullptr)
                 delete[]arr;
-            arr2 = temp;
+            arr2 = temp;*/
+            SetColor(12); cout << "Mission is Impossible\n"; SetColor(7);
             
         }
 
@@ -64,11 +65,11 @@ public:
     {
         return LastElement = Empty;
     }
-    ~Stack()
+    /*~Stack()
     {
         if (arr2!=nullptr)
             delete[]arr2;
-    }
+    }*/
 };
 
 int main()
