@@ -69,7 +69,8 @@ public:
 			SetPos(point.x, point.y+i);
 			for (int j = 0; j < width; j++)
 			{
-				cout << "*";
+				SetColor(j);
+				cout << "*"; Sleep(500);
 			}
 			
 		}
@@ -116,6 +117,8 @@ int main()
 	rect.print();
 	Poliline pol;
 	pol.FillOut();
+	Sleep(5000);
+	system("cls");
 	pol.print();
 	
 
