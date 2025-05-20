@@ -24,17 +24,7 @@ public:
         arr[++LastElement] = rand() % 40;
         else
         {
-            /*MaxSize = LastElement * 2;
-            temp = new int[MaxSize];
-            for (int i = 0; i < LastElement+1; i++)
-            {
-                temp[i] = arr[i];
-            }
-            if (arr2 != nullptr)
-                delete[]arr;
-            arr2 = temp;*/
-            SetColor(12); cout << "Mission is Impossible\n"; SetColor(7);
-            
+            SetColor(12); cout << "Mission is Impossible\n"; SetColor(7);   
         }
 
     }
@@ -65,11 +55,7 @@ public:
     {
         return LastElement = Empty;
     }
-    /*~Stack()
-    {
-        if (arr2!=nullptr)
-            delete[]arr2;
-    }*/
+    
 };
 
 int main()

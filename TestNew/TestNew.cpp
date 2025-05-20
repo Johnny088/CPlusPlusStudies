@@ -69,4 +69,8 @@ int main()
 
     /*int array[size] = { 4,5,6,7,8 };
     int* parr = array;*/
+   int a[5];
+   int* b;
+   b = nullptr;
+   a[1] = 2;
 }

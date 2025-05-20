@@ -24,10 +24,7 @@ struct Point
 		x = rand() % 50;
 		y = rand() % 50;
 	}
-	void print2()
-	{
-		SetPos(x, y); cout << "*";
-	}
+	
 };
 
 class Shape
@@ -35,6 +32,8 @@ class Shape
 public:
 	virtual void print()const = 0;
 };
+
+
 
 class Line :public Shape
 {
@@ -78,9 +77,13 @@ public:
 	}
 
 };
-class Poliline /*:public Shape*/
+
+
+
+
+class Poliline :public Shape
 {
-	Point* points[15]{};
+	Point points[15]{};
 public:
 	Poliline() :points() {}
 
@@ -88,15 +91,16 @@ public:
 	{
 		for (int i = 0; i < 15; i++)
 		{
-			points[i]->add();
+			points[i].add();
 		}
 	}
-	void Print()
+	void print() const override
 	{
 		for (int i = 0; i < 15; i++)
 		{
 			SetColor(i+1); 
-			points[i]->print2();
+			SetPos(points[i].x, points[i].y); cout << "*";
+			Sleep(2000);
 		}
 	}
 	
@@ -112,6 +116,7 @@ int main()
 	rect.print();
 	Poliline pol;
 	pol.FillOut();
-	pol.Print();
+	pol.print();
+	
 
 }
