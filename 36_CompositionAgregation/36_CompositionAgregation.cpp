@@ -20,7 +20,7 @@ public:
 			cout << "Hatchback\n";
 			break;
 		case Coupe:
-			cout << "Couple\n";
+			cout << "Coupe\n";
 			break;
 		case Van:
 			cout << "Van\n";
