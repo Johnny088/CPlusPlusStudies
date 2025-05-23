@@ -52,11 +52,11 @@ int main()
     char text[size] = "Lorem Ipsum is simply DUMMY text OF the printing AND typesetting industry. LOREM Ipsum has been THE industry's standard dummy\n";
     int len = stringlen(text, size);
     cout << len;*/
-   for (int i = 0; i < 16; i++)
+ /*  for (int i = 0; i < 16; i++)
     {
         SetColor(i);
         cout << "Hello World!\n";
-    }
+    }*/
     /*Sleep(2000);
     system("cls");*/
    /*for (int i = 0; i < 16; i++)
@@ -69,8 +69,23 @@ int main()
 
     /*int array[size] = { 4,5,6,7,8 };
     int* parr = array;*/
-   int a[5];
+   /*int a[5];
    int* b;
    b = nullptr;
    a[1] = 2;
+   cout << a[1] << endl;*/
+
+   /*int b = {35};
+   cout << "b: " << b << endl;*/
+
+
+  /* int c{ 35 };
+   cout << "c: " << c << endl;
+
+   c = (4 > 11) ? 4 : 11;
+   cout << c;*/
+
+
+   enum Priority { None, guest, administrator, manager, boss };
+   cout << "Boss: " << boss << "\nGuest: " << guest;
 }
