@@ -54,7 +54,7 @@ T LinearSearch(T arr[], T value)
 	return -1;
 }
 template <typename T>
-T bubbleSort(T arr[], int n)
+void bubbleSort(T arr[], int n)
 {
 	for (int i = 0; i < n - 1; i++)
 	{
@@ -65,13 +65,13 @@ T bubbleSort(T arr[], int n)
 				int temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;
-				count1++;
+				/*count1++; */                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 			}
 		}
 	}
 }
 template <typename T>
-T insertionSort(T arr[], int size)
+void insertionSort(T arr[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -102,7 +102,7 @@ T partition(T arr[], int low, int high)
 	return i + 1;
 }
 template <typename T>
-T quickSort(T arr[], int low, int high)
+void quickSort(T arr[], int low, int high)
 {
 	if (low < high)
 	{
@@ -114,7 +114,7 @@ T quickSort(T arr[], int low, int high)
 
 
 template <typename T>
-T PrintArr(T arr[], int n)
+void PrintArr(T arr[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -124,22 +124,22 @@ T PrintArr(T arr[], int n)
 }
 
 
-//int Factorial(int num)
-//{
-//	if (num == 0)
-//	{
-//		cout << "Can`t fint factorial of 0" << endl;
-//		return;
-//	}
-//	if (num == 1)
-//	{
-//		return 1;
-//	}
-//	else
-//	{			//5*4   //3*2*1
-//		return num * Factorial(num - 1);
-//	}
-//}
+int Factorial(int num)
+{
+	if (num == 0)
+	{
+		cout << "Can`t fint factorial of 0" << endl;
+		return-1;
+	}
+	if (num == 1)
+	{
+		return 1;
+	}
+	else
+	{			//5*4   //3*2*1
+		return num * Factorial(num - 1);
+	}
+}
 template <typename T>
 T binarySearch(T arr[], int size, T key)
 {
@@ -168,13 +168,15 @@ T binarySearch(T arr[], int size, T key)
 int main()
 {
 
-	int arr [SIZE] = {1,2,3,4,5,6,7,8,9,10};
-	int arr1[]{ 12,4,2,6,4,8,0,12,34,56,34,2334,234,2,34,354,2334,2,64,56,455,3445,234,23,423,42,353,34564,56,456,345,523,423,423,4,2354,34,53,455,345,346,45756,756,7,567,35,32,423423,34,24,346,45,6545,5745 };
+	int arr[SIZE] = { 1,2,3,4,5,6,7,8,9,10 };
+	int arr1[]{ 12,4,2,6,4,8,0,12,34,56,34,2334,234 };
 	int size = sizeof(arr1) / sizeof(arr1[0]);
-	quickSort(arr1, 0, size - 1);
-	cout << "Elem is on pos : " << binarySearch(arr1, size, 354) << endl;
+	cout << endl <<"=========================\n";
+	/*quickSort(arr1, 0, size - 1);*/
+	bubbleSort(arr1, size);
+	PrintArr(arr1, size);
+	/*cout << "Elem is on pos : " << binarySearch(arr1, size, 354) << endl;*/
 	//PrintArr(arr1, size);
-	////bubbleSort(arr1, size);
 	////insertionSort(arr1, size);
 	////cout << "Number of swaps : " << count1 << endl;
 	//quickSort(arr1, 0, size - 1);
@@ -193,5 +195,5 @@ int main()
 	{
 		cout << "The number is not found" << endl;
 	}*/
-
+}
 

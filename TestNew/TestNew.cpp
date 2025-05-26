@@ -45,6 +45,26 @@ void one()
 //    }
 //    
 //}
+int Factorial(int num)
+{
+    if (num == 0)
+    {
+        cout << "Can`t fint factorial of 0" << endl;
+        return -1;
+    }
+    if (num == 1)
+    {
+        return 1;
+    }
+    else
+    {			//5*4   //3*2*1
+        return num * Factorial(num - 1);
+    }
+}
+void add(int * a)
+{
+    a++;
+}
 int main()
 {
     /*IntroduseMe();*/
@@ -86,6 +106,12 @@ int main()
    cout << c;*/
 
 
-   enum Priority { None, guest, administrator, manager, boss };
-   cout << "Boss: " << boss << "\nGuest: " << guest;
+   /*enum Priority { None, guest, administrator, manager, boss };
+   cout << "Boss: " << boss << "\nGuest: " << guest << endl << "--------------------\n";
+   int a{ 5 };
+   int b = Factorial(a);
+   cout << b;*/
+    int a = 5;
+    add(&a);
+    cout << a;
 }

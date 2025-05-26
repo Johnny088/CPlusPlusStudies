@@ -21,9 +21,21 @@ public:
     }
     Stack(int size)
     {
-        this->MaxSize = size;
-        arr = new int[MaxSize];
-        LastElement = Empty;
+        if (size < 0)
+        {
+            throw invalid_argument("Incorrect size...");
+        }
+        else
+        {
+            this->MaxSize = size;
+            arr = new int[MaxSize];
+            LastElement = Empty;
+        }
+        
+    }
+    bool IsEmpty()
+    {
+        return LastElement == Empty;
     }
     void Resize()
     {
@@ -38,12 +50,19 @@ public:
                 delete[]arr;
             arr = temp;
     }
-    void add()
+    int add()
     {
         
         if (Isfull())
-            Resize();
-        arr[++LastElement] = rand() % 40;
+        {
+            throw exception("Your array is full");
+        }
+        else 
+        {
+            arr[++LastElement] = rand() % 40;
+        }
+           /* Resize();
+        arr[++LastElement] = rand() % 40;*/
        
 
     }
@@ -65,14 +84,14 @@ public:
         {
             return arr[LastElement--];
         }
+        else
+        {
+            throw exception();
+        }
     }
     int amount()
     {
         return LastElement + 1;
-    }
-    bool IsEmpty()
-    {
-        return LastElement = Empty;
     }
     ~Stack()
     {
@@ -84,13 +103,63 @@ public:
 int main()
 {
     srand(time(0));
-    Stack st1(10);
-    for (int i = 0; i < 9; i++)
+    int size;
+    cout << "Enter the size: "; cin >> size;
+
+    try
     {
+    
+        Stack st1(size);
+        for (int i = 0; i < size; i++)
+        {
+            st1.add();
+        }
+        st1.print();
         st1.add();
+        st1.add();
+        st1.add();
+        /*for (int i = 0; i < size + 1; i++)
+        {
+            st1.Pop();
+        }*/
+        
     }
-    st1.print();
-    SetColor(10); cout << "was added 9/10 elements in stack.\n"; SetColor(7);
+   
+    catch (invalid_argument& e)
+    {
+        cout << "Invalid argument...\n";
+        cout << e.what() << endl;
+    }
+    catch (exception)
+    {
+        cout << "Your array is full...\n";
+    }
+    cout << "--------------------------------------------------------------------------------\n";
+    Stack st2(size);
+    for (int i = 0; i < size; i++)
+    {
+        st2.add();
+    }
+    st2.print();
+    try
+    {
+        for (int i = 0; i < size+1; i++)
+        {
+            cout << "Element: " << st2.Pop() << "was deleted." << endl;
+        }
+    }
+    catch (exception)
+    {
+        SetColor(12); cout << "You have nothing to delete.........\n"; SetColor(7);
+    }
+  
+
+
+
+
+
+
+    /*SetColor(10); cout << "was added 9/10 elements in stack.\n"; SetColor(7);*/
     //st1.add();
     //st1.add();
     //st1.add();
