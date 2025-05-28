@@ -111,7 +111,17 @@ int main()
    int a{ 5 };
    int b = Factorial(a);
    cout << b;*/
-    int a = 5;
+    /*int a = 5;
     add(&a);
-    cout << a;
+    cout << a;*/
+    int x = 2.25;
+    decltype(x) z = 15.5;
+    cout << "decltype z" << z << endl;
+    cout << "just x:" << x << endl;
+    auto j = x;
+    cout << "Auto j:" << j << endl;
+    cout << "-----------------------------\n";
+    x = 15;
+    cout << "just x:" << x << endl;
+    cout << "Auto j:" << j << endl;
 }

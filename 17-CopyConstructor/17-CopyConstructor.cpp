@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string>
 #include <windows.h>
+#include <fstream>
 using namespace std;
 void SetColor(int color)//0-15
 {
@@ -76,6 +77,36 @@ public:
 		SetColor(10); cout << "The vagon was added\n"; SetColor(7);
 	}
 
+
+	void BinarySave()
+	{
+		ofstream out("Train.bin", ios_base::out | ios_base::binary);
+		out.write((char*)&model, sizeof(model));
+		out.write((char*)&countVagons, sizeof(countVagons));
+		for (int i = 0; i < countVagons; i++)
+		{
+			out.write((char*)&vagons[i], sizeof(vagons[i]));
+		}
+		SetColor(10); cout << "The date was added"; SetColor(7);
+		out.close();
+	}
+
+	void BinaryOut()
+	{
+		ifstream in("Train.bin", ios_base::in | ios_base::binary);
+		in.read((char*)&model, sizeof(model));
+		in.read((char*)&countVagons, sizeof(countVagons));
+		vagons = new Vagon[countVagons];
+		for (int i = 0; i < countVagons; i++)
+		{
+			in.read((char*)&vagons[i], sizeof(vagons[i]));
+		}
+
+		in.close();
+		
+		
+	}
+
 	~Train()
 	{
 		if (vagons != nullptr)
@@ -85,15 +116,16 @@ public:
 	}
 };
 
+
 int main()
 {
 	Train train1;
-	string model;
 	int menu;
+	
 	do 
 	{
 		SetColor(3);
-		cout << "1 - show the information of the train\n2 - add one vagon\n0 - exit\n3 - set up the model of the train\n4 - get the model of the train\nEnter your choice: "; 
+		cout << "1 - show the information of the train\n2 - add one vagon\n0 - exit\n3 - set up the model of the train\n4 - get the model of the train \n5 - add to file \n6 - read from file \nEnter your choice: "; 
 		SetColor(7);
 		cin >> menu;
 		switch (menu)
@@ -110,6 +142,12 @@ int main()
 			break;
 		case 4:
 			cout << train1.GetModel() <<"\n";
+			break;
+		case 5:
+			train1.BinarySave();
+			break;
+		case 6:
+			train1.BinaryOut();
 			break;
 		case 0:
 			SetColor(6);
