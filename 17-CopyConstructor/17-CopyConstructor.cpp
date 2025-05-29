@@ -91,6 +91,22 @@ public:
 		out.close();
 	}
 
+	void BinarySave2()
+	{
+		ofstream out("Train.bin", ios_base::out | ios_base::binary);
+		out.write((char*)&model, sizeof(model));
+		out.write((char*)&countVagons, sizeof(countVagons));
+		for (int i = 0; i < countVagons; i++)
+		{
+			out.write((char*)&vagons[i].number, sizeof(vagons[i].number));
+			out.write((char*)&vagons[i].passanger, sizeof(vagons[i].passanger));
+			out.write((char*)&vagons[i].places, sizeof(vagons[i].places));
+		}
+		SetColor(10); cout << "The date was added"; SetColor(7);
+		out.close();
+	}
+
+
 	void BinaryOut()
 	{
 		ifstream in("Train.bin", ios_base::in | ios_base::binary);
@@ -106,12 +122,44 @@ public:
 		
 		
 	}
+	void BinaryOut2()
+	{
+		ifstream in("Train.bin", ios_base::in | ios_base::binary);
+		if (!in)
+			cout << "something went wrong...";
+		else
+		{
+			in.read((char*)&model, sizeof(model));
+			in.read((char*)&countVagons, sizeof(countVagons));
+
+			if (vagons != nullptr)
+			{
+				delete[]vagons;
+			}
+
+
+			vagons = new Vagon[countVagons];
+			for (int i = 0; i < countVagons; i++)
+			{
+				in.read((char*)&vagons[i].number, sizeof(vagons[i].number));
+				in.read((char*)&vagons[i].places, sizeof(vagons[i].places));
+				in.read((char*)&vagons[i].passanger, sizeof(vagons[i].passanger));
+			}
+
+			in.close();
+			cout << " the file has read.\n";
+
+		}
+		
+
+	}
 
 	~Train()
 	{
 		if (vagons != nullptr)
 		{
 			delete[]vagons;
+			vagons = nullptr;
 		}
 	}
 };
@@ -120,6 +168,7 @@ public:
 int main()
 {
 	Train train1;
+	string model;
 	int menu;
 	
 	do 
@@ -144,10 +193,10 @@ int main()
 			cout << train1.GetModel() <<"\n";
 			break;
 		case 5:
-			train1.BinarySave();
+			train1.BinarySave2();
 			break;
 		case 6:
-			train1.BinaryOut();
+			train1.BinaryOut2();
 			break;
 		case 0:
 			SetColor(6);

@@ -42,10 +42,10 @@ void FillWashingMashine(const char& filename)
     outFiles.close();
     cout << "product was added to file successfully! " << endl;
 }
-void printWashing()
-{
-    cout 
-}
+//void printWashing()
+//{
+//    cout 
+//}
 void ImportFile(const char& filename)
 {
     ifstream infile(&filename);
