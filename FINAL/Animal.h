@@ -5,6 +5,7 @@
 #pragma comment(lib, "winmm.lib")
 using namespace std;
 enum Type { none, amphibians, aquatic, terrestrial, birds };
+enum State{sick=1,hungry,happy};
 class Animal
 {
 protected:
@@ -14,65 +15,45 @@ protected:
 	float speed;
 	string habitat;
 	string species;
+	State state;
 public:
-	Animal():name("none"), type(none),weight(0),speed(0),habitat("nowhere"), species("none"){}
-	Animal(string n, Type t, float w, float s, string h, string sp) :name(n), type(none), weight(w), speed(s), habitat(h), species(sp) {}
+	Animal():name("none"), type(none),weight(0),speed(0),habitat("nowhere"), species("none"), state(happy){}
+	Animal(string n, Type t, float w, float s, string h, string sp, State st) :name(n), type(t), weight(w), speed(s), habitat(h), species(sp), state(st) {}
 public:
 	virtual void show()=0;
 	virtual void sound()=0;
+	void description();
 };
 class Lion : public Animal
 {
 public:
-	Lion(string n, Type t, float w, float s, string h, string sp) : Animal(n, t, w, s, h, sp) {}
+	Lion(string n, Type t, float w, float s, string h, string sp) : Animal(n, terrestrial, w, s, h, sp, happy) {}
 	void show() override;
 	void sound() override;
+	void description()
+	{
+		cout << "I'm a lion...\n"; Animal::description();
+	}
 };
 class Monkey: public Animal
 {
 public:
-	Monkey(string n, Type t, float w, float s, string h, string sp) : Animal(n, t, w, s, h, sp) {}
-	void show() override
+	Monkey(string n, Type t, float w, float s, string h, string sp) : Animal(n, terrestrial, w, s, h, sp, happy) {}
+	void show() override;
+	void sound() override;
+	void description()
 	{
-		cout << R"(                     .                                                          
-  . . .  . . .    . .. . . .. .   .. . .  . . .  . . .  . . .  . . .  . . .  . .
-  . . .  . . .    . .. . . .. .   .. .&,..( . .  . . .    . .  . . .  .   .  . .
-  . . .  . . .    . .. . . ../%(&.,,./,. ......, /#. .  . . .  . . .  . . .  . .
-  .   .  . . .    .  . %#,,,,,,,*,,,,,,.#,,,.......... #  .    . . .  .   .  . .
-  . . .  . . .    . ..&**,,,/#**,,,,,,,,,(,*.,/,..#......,% .  . . .  . . .  . .
-  . . .  . . .    . ,****#(*(**/***,#,,*,,,,,,,*,,,...%.....&  . . (  . . .  . .
-                  ( *////*//(//////***(***,,,,,,,,,. .....,%%##,,,,,.../        
- . . .          #/ **///(////*(#.(/**%%%%#*&.    . (((%#(%/#%,,&****.....#      
- . . .  . . .  . .**#((/#,.......,.,.*% ........     .@(/((#%(**........... . . 
- . . . #.*,***,, &###(*........*.................#&  . %//%(#*,%&,........./. . 
- . . (,,*#,#,,,,%&(*#*...  .............................%/###%****,........(. . 
- . ./,,.%,,,*..#(###(....................... .%**&....../(#(#(**..,,......# . . 
- . .,.,,**...(,,,,&#.*......,&%%.............%/#/,.... #.(/#%%&,/.,,.....(  . . 
-     .*, *...(...*(#/#%...*,%##(%/,...##.,..... ......... (*#.,*......./ .      
-  . %%@.,.#.,.....#/#%. ..,........** ..............,,..... %*% ...*/ . . .  . .
-        /..........%#,,............................(.... ../(*..          .     
-  . . .  . ./# ,&,#@##,.......(................  ........*. */ . . .  . . .  . .
-  . . .  . . .    .%(%(,,............ #.................,.(#.  . . .  .   .  . .
-  . . .  . . .    . ..#%%*........................... %*. . .  . . .  . . .  . .
-  .   .  . . .    . .. . . &#%,,( ......*.....,.###*,.    **, (. . .  .   .  . .
-                            *((#(((#(#####(#((##(/** ,/((#((((*((               
- . . .  . . .  . . .  . . ,,*/(((((/,,*,....(((**,,,,&(# . .  (#(*. .. . .  . . 
- . . .  . . .    . .  .(#.,,,**((,,,*,,,,,,,,./(./....*. . . ..(((. .. . .  . . 
- . . .         . . . # ...,,,,,(*,,,,,**,,,,,,, #/.....( # . .///   .. . .  .   
- . . .  . . .  . . .  ., ,,,*(/(,,,,,,,,,,,,,,,,/(//..,*%. ,((##* . .. . .  . . 
- . . .    . .  . . .  .# ,,,*/( /,,*,,,,,,,,,,.#//(/(/((&((*##.   . .. . .  . . 
- . . .  . . .  . . . %#(.****/**.,,,,,,,,,,....(//*/*//(*(#. ..   . .. . .  . . 
- . . .    .      . .  .*%///////%....,........%//((/.////((.  #   ( .. .      . 
-  . . .  . . &  %%%%..&#%%((////(((/,,....,*,%#%(/*%,&,*#(..,,,,,%,*  . . .  . .
-  . . .  . . .%,,*..., &&*%#(#.#,%(%#/#,,***#(,,,,,,,,,,.,..,,,,,.#,/,.   .  . .
-  . . .  . . ,,........,&,......../,%%#&##%.,,,,,,,,,,,*,,,,,,,,,**,,&. . .  . .
-             .&...,,..,%..(.../... ...(    %,,%.,,#,,/*,,%*,.,                  
-  . . .  . . .#,/*.&.**#..%.../.....** .  . . .# #%,,(,,,/. .  . . .  . . .  . .
-  . . .  . .      . .. . . .. . . .. . .  . . .  . . .    . .  . . .  .   .  . .
-  . . .  . . .    . .. . . .. . . .. . .  . . .  . . .  . . .  . . .  . .    . .\n)";
+		cout << "I'm a monkey...\n"; Animal::description();
 	}
-	void sound() override
+};
+class Elephant : public Animal
+{
+public:
+	Elephant(string n, Type t, float w, float s, string h, string sp) : Animal(n, terrestrial, w, s, h, sp, happy) {}
+	void show() override;
+	void sound() override;
+	void description()
 	{
-		PlaySound(TEXT("mixkit-monkey-excited-screech-105.wav"), NULL, SND_FILENAME | SND_SYNC);
+		cout << "I'm an Elephant...\n"; Animal::description();
 	}
 };
