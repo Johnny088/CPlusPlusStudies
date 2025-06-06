@@ -31,7 +31,7 @@ public:
 			cout << "Enter the habitat of the lion: "; cin >> habitat;
 			cout << "Enter the species of the lion: "; cin >> species;
 			animals.push_back(new Lion(name, Type::terrestrial,weight,speed,habitat,species));
-			SetColor1(10); cout << "The animal was added";
+			SetColor1(10); cout << "The animal was added\n";
 			break;
 		case 2:
 			cout << "Enter the name of the monkey: "; cin >> name;
@@ -40,7 +40,7 @@ public:
 			cout << "Enter the habitat of the monkey: "; cin >> habitat;
 			cout << "Enter the species of the monkey: "; cin >> species;
 			animals.push_back(new Monkey(name, Type::terrestrial, weight, speed, habitat, species));
-			SetColor1(10); cout << "The animal was added";
+			SetColor1(10); cout << "The animal was added\n";
 			break;
 		case 3:
 			cout << "Enter the name of the Elephant: "; cin >> name;
@@ -49,7 +49,7 @@ public:
 			cout << "Enter the habitat of the elephant: "; cin >> habitat;
 			cout << "Enter the species of the elephant: "; cin >> species;
 			animals.push_back(new Elephant(name, Type::terrestrial, weight, speed, habitat, species));
-			SetColor1(10); cout << "The animal was added";
+			SetColor1(10); cout << "The animal was added\n";
 			break;
 		default:
 			break;
@@ -100,11 +100,12 @@ public:
 
 void menu()
 {
-	SetColor1(3);
+	
 	Zoo zoo1;
 	int ChoiceMenu;
 	do
 	{
+		SetColor1(3);
 		cout << "\tWelcome to our Zoo:\n\nMain menu\n1 - add an animal.\n2 - Show animals.\n3 - Buy some food\n4 - Show the rest of food\n0 - exit.\n"; cin >> ChoiceMenu;
 		switch (ChoiceMenu)
 		{

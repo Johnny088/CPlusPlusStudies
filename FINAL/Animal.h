@@ -23,7 +23,14 @@ public:
 	virtual void show()=0;
 	virtual void sound()=0;
 	void description();
+	
 };
+
+
+
+
+
+
 class Lion : public Animal
 {
 public:

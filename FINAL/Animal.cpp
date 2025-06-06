@@ -66,20 +66,20 @@ void Animal::description()
 	case terrestrial: cout << " terrestrial\n"; break;
 	case birds: cout << " bird\n"; break;
 	}
-	switch (state)
-	{
-	case sick: cout << "the animal feels sick, it need to be treated"; break;
-	case hungry: cout << "the animal wanna eat, please feed it"; break;
-	case happy: cout << "the animal is happy."; break;
-	}
-
 	cout << "Name: " << name << "\n";
 	cout << "Type: " << type << "\n";
 	cout << "Weight: " << weight << "\n";
 	cout << "Speed: " << speed << "\n";
 	cout << "Habitat: " << habitat << "\n";
 	cout << "Species: " << species << "\n";
-	if (state == sick)
+	switch (state)
+	{
+	case sick: SetColor(4); cout << "the animal feels sick, it need to be treated\n"; break;
+	case hungry: SetColor(14); cout << "the animal wanna eat, please feed it\n"; break;
+	case happy: SetColor(10); cout << "the animal is happy.\n"; break;
+	}
+	/*cout << "State: " << state << "\n";*/
+	/*if (state == sick)
 	{
 		SetColor(4); cout << "State: " << state << "\n";
 	}
@@ -90,7 +90,7 @@ void Animal::description()
 	else
 	{
 		SetColor(10); cout << "State: " << state << "\n";
-	}
+	}*/
 	
 }
 
