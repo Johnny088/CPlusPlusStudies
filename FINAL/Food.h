@@ -38,9 +38,9 @@ public:
 	void BuySomeFood();
 	void RestOfFood()
 	{
-		cout << "the meat is: "; this->GetMeat(); cout << " pounds left\n";
-		cout << "the grass is: "; this->GetGrass(); cout << " pounds left\n";
-		cout << "the fruits is: "; this->Getfruit(); cout << " pounds left\n";
+		cout << "the meat is: "; this->GetMeat(); cout << " \tpounds left\n";
+		cout << "the grass is: "; this->GetGrass(); cout << " \tpounds left\n";
+		cout << "the fruits is: "; this->Getfruit(); cout << " \tpounds left\n";
 	}
 
 

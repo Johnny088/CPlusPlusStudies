@@ -14,11 +14,11 @@ class Zoo
 	vector<Animal*> animals;
 	Food * food;
 public:
-	Zoo() :animals(0), food() {}
+	Zoo() :animals(0), food(new Food()) {}
 	void AddAnimal()
 	{
 		int choice;
-		cout << "Who you wanna add:\n1 - Lion \n2 - Monkey\n3 - elephant\nEnter the choice: "; cin >> choice;
+		SetColor1(14); cout << "Who you wanna add?"; SetColor1(3); cout << "\n1 - Lion \n2 - Monkey\n3 - elephant\nEnter the choice: "; cin >> choice;
 		string name, habitat, species;
 		float weight, speed;
 		switch (choice)
@@ -30,7 +30,7 @@ public:
 			cout << "Enter the speed of the lion: "; cin >> speed;
 			cout << "Enter the habitat of the lion: "; cin >> habitat;
 			cout << "Enter the species of the lion: "; cin >> species;
-			animals.push_back(new Lion(name, Type::terrestrial,weight,speed,habitat,species));
+			animals.push_back(new Lion(name,weight,speed,habitat,species));
 			SetColor1(10); cout << "The animal was added\n";
 			break;
 		case 2:
@@ -39,7 +39,7 @@ public:
 			cout << "Enter the speed of the monkey: "; cin >> speed;
 			cout << "Enter the habitat of the monkey: "; cin >> habitat;
 			cout << "Enter the species of the monkey: "; cin >> species;
-			animals.push_back(new Monkey(name, Type::terrestrial, weight, speed, habitat, species));
+			animals.push_back(new Monkey(name, weight, speed, habitat, species));
 			SetColor1(10); cout << "The animal was added\n";
 			break;
 		case 3:
@@ -48,7 +48,7 @@ public:
 			cout << "Enter the speed of the elephant: "; cin >> speed;
 			cout << "Enter the habitat of the elephant: "; cin >> habitat;
 			cout << "Enter the species of the elephant: "; cin >> species;
-			animals.push_back(new Elephant(name, Type::terrestrial, weight, speed, habitat, species));
+			animals.push_back(new Elephant(name, weight, speed, habitat, species));
 			SetColor1(10); cout << "The animal was added\n";
 			break;
 		default:
@@ -68,22 +68,48 @@ public:
 	void BuyFood()
 	{
 		food->BuySomeFood();
+		SetColor1(10); cout << "food was added\n";
 	}
 	void AmountOfFood()
 	{
+		SetColor1(14);
 		food->RestOfFood();
+	}
+	void Checkanimals()
+	{
+		if (animals.size() > 0)
+		{
+			int state = animals[0]->CheckState();
+			cout << "StateOfAnimals: ";
+			switch (state)
+			{
+			case 1: SetColor1(4); cout << "the animal feel sick, it need to be treated\n"; break;
+			case 2: SetColor1(14); cout << "the animals wanna eat, please feed them\n"; break;
+			case 3: SetColor1(10); cout << "the animals are happy.\n"; break;
+			}
+		}
+		
 	}
 	void NextDay()
 	{
-		/*if (animals.size() !=0 );
+		if (animals.size() == 0)
 		{
-			int i = 0;
-			for (auto animal : animals)
-			{
-				animals[i].
-			}
-
-		}*/
+			cout << "you don't have any animal \n";
+			return;
+		}
+			int state = animals[0]->CheckState();
+			
+				for (int i = 0; i < animals.size(); i++)
+				{
+					if (state == 3) 
+					{
+						animals[i]->SetState(State::hungry);
+					}
+					else if (state == 2)
+					{
+						animals[i]->SetState(State::sick);
+					}
+				}
 	}
 
 	~Zoo()
@@ -94,6 +120,7 @@ public:
 			
 		}
 		animals.clear();
+		delete food;
 	}
 	
 };
@@ -106,7 +133,8 @@ void menu()
 	do
 	{
 		SetColor1(3);
-		cout << "\tWelcome to our Zoo:\n\nMain menu\n1 - add an animal.\n2 - Show animals.\n3 - Buy some food\n4 - Show the rest of food\n0 - exit.\n"; cin >> ChoiceMenu;
+		cout << "\tWelcome to our Zoo:\n\nMain menu\n1 - add an animal.\n2 - Show animals.\n3 - Buy some food\n4 - Show the rest of food\n5 - Check animals\n6 - Next day\n0 - exit.\n"; cin >> ChoiceMenu;
+
 		switch (ChoiceMenu)
 		{
 		case 1:
@@ -121,7 +149,12 @@ void menu()
 		case 4:
 			zoo1.AmountOfFood();
 			break;
+		case 5:
+			zoo1.Checkanimals();
 		case 0:
+		case 6:
+			zoo1.NextDay();
+			break;
 			SetColor1(7);
 			break;
 		default:
@@ -137,7 +170,5 @@ void menu()
 
 void main()
 {
-	/*Zoo z1;
-	z1.AddAnimal();*/
 	menu();
 }

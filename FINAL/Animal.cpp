@@ -4,7 +4,7 @@ void SetColor(int color)//0-15
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
-void Lion::show()
+void Lion::show() const
 {
 	SetColor(6);
     cout << R"(             .                                              .             .     
@@ -48,15 +48,16 @@ void Lion::show()
 	cout << "\n";
 	Lion::sound();
 	SetColor(11);
-	Lion::description();
+	/*Lion::description();*/
+	this->description();
 }
 
-void Lion::sound()
+void Lion::sound() const
 {
 	PlaySound(TEXT("ROARING_LION_AUo.wav"), NULL, SND_FILENAME | SND_SYNC);
 }
 
-void Animal::description()
+void Animal::description() const
 {
 	switch (type)
 	{
@@ -67,7 +68,6 @@ void Animal::description()
 	case birds: cout << " bird\n"; break;
 	}
 	cout << "Name: " << name << "\n";
-	cout << "Type: " << type << "\n";
 	cout << "Weight: " << weight << "\n";
 	cout << "Speed: " << speed << "\n";
 	cout << "Habitat: " << habitat << "\n";
@@ -94,7 +94,7 @@ void Animal::description()
 	
 }
 
-void Monkey::show()
+void Monkey::show() const
 {
 	SetColor(6);
     cout << R"(                     .                                                          
@@ -136,15 +136,21 @@ void Monkey::show()
     cout << "\n";
     Monkey::sound();
 	SetColor(11);
-	Monkey::description();
+	this->description();
+	/*Monkey::description();*/
 }
 
-void Monkey::sound()
+void Monkey::sound() const
 {
     PlaySound(TEXT("mixkit-monkey-excited-screech-105.wav"), NULL, SND_FILENAME | SND_SYNC);
 }
 
-void Elephant::show()
+//void Monkey::function()
+//{
+//	this->description();
+//}
+
+void Elephant::show() const
 {
 	SetColor(14);
 	cout << R"(                         .        .                                          .  
@@ -187,10 +193,11 @@ void Elephant::show()
 	cout << "\n";
 	Elephant::sound();
 	SetColor(11);
-	Elephant::description();
+	this->description();
+	/*Elephant::description();*/
 }
 
-void Elephant::sound()
+void Elephant::sound() const
 {
 	PlaySound(TEXT("Elephant.wav"), NULL, SND_FILENAME | SND_SYNC);
 }
