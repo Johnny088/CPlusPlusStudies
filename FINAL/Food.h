@@ -22,25 +22,28 @@ public:
 		this->fruit = weight;
 	}
 	//get
-	inline void GetMeat() const
+	inline int GetMeat() const
 	{
-		cout << meat << "\n";
+		/*cout << meat << "\n";*/
+		return this->meat;
 	}
-	inline void GetGrass() const
+	inline int GetGrass() const
 	{
-		cout << grass << "\n";
+		/*cout << grass << "\n";*/
+		return this->grass;
 	}
-	inline void Getfruit() const
+	inline int Getfruit() const
 	{
-		cout << fruit << "\n";
+		/*cout << fruit << "\n";*/
+		return this->fruit;
 	}
 	//other function
 	void BuySomeFood();
 	void RestOfFood()
 	{
-		cout << "the meat is: "; this->GetMeat(); cout << " \tpounds left\n";
-		cout << "the grass is: "; this->GetGrass(); cout << " \tpounds left\n";
-		cout << "the fruits is: "; this->Getfruit(); cout << " \tpounds left\n";
+		cout << "the meat is: " << this->GetMeat() << " \tpounds left\n";
+		cout << "the grass is: " << this->GetGrass() << " \tpounds left\n";
+		cout << "the fruits is: " << this->Getfruit() << " \tpounds left\n";
 	}
 
 

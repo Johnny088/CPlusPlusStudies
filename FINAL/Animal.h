@@ -25,16 +25,16 @@ public:
 	void description() const;
 	int CheckState() const
 	{
-		int a;
+		
 		if (state == hungry)
 		{
-			a = 2;
-			return a;
+			
+			return 2;
 		}
 		else if (state == sick)
 		{
-			a = 1;
-			return a;
+	
+			return 1;
 		}
 		else
 			return 3;

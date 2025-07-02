@@ -80,13 +80,17 @@ public:
 		if (animals.size() > 0)
 		{
 			int state = animals[0]->CheckState();
-			cout << "StateOfAnimals: ";
-			switch (state)
+			for (int i = 0; i < animals.size(); i++)
 			{
-			case 1: SetColor1(4); cout << "the animal feel sick, it need to be treated\n"; break;
-			case 2: SetColor1(14); cout << "the animals wanna eat, please feed them\n"; break;
-			case 3: SetColor1(10); cout << "the animals are happy.\n"; break;
+				state = animals[i]->CheckState();
+				switch (state)
+				{
+				case 1: SetColor1(4); cout << "the animal feel sick, it need to be treated\n"; break;
+				case 2: SetColor1(14); cout << "the animals wanna eat, please feed them\n"; break;
+				case 3: SetColor1(10); cout << "the animals is happy.\n"; break;
+				}
 			}
+			
 		}
 		
 	}
@@ -97,23 +101,28 @@ public:
 			cout << "you don't have any animal \n";
 			return;
 		}
-			int state = animals[0]->CheckState();
 			
 				for (int i = 0; i < animals.size(); i++)
 				{
-					if (state == 3) 
-					{
-						animals[i]->SetState(State::hungry);
-					}
-					else if (state == 2)
+					if (animals[i]->CheckState() == 2)
 					{
 						animals[i]->SetState(State::sick);
 					}
+					if (animals[i]->CheckState()==3)
+					{
+						animals[i]->SetState(State::hungry);
+					}
+					
 				}
 	}
 
 	~Zoo()
 	{
+		/*for (vector<Animal*> ::iterator i = animals.begin();i!=animals.end();i++)
+		{
+			delete *i;
+		}
+		animals.clear();*/
 		for (auto animal : animals)
 		{
 			delete animal;
@@ -134,7 +143,7 @@ void menu()
 	{
 		SetColor1(3);
 		cout << "\tWelcome to our Zoo:\n\nMain menu\n1 - add an animal.\n2 - Show animals.\n3 - Buy some food\n4 - Show the rest of food\n5 - Check animals\n6 - Next day\n0 - exit.\n"; cin >> ChoiceMenu;
-
+		cin.ignore();
 		switch (ChoiceMenu)
 		{
 		case 1:
@@ -151,10 +160,10 @@ void menu()
 			break;
 		case 5:
 			zoo1.Checkanimals();
-		case 0:
 		case 6:
 			zoo1.NextDay();
 			break;
+		case 0:
 			SetColor1(7);
 			break;
 		default:
